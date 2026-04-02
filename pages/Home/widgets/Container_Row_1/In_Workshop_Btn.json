@@ -27,7 +27,7 @@
   "mobileRightColumn": 7,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('Workshop', {}, 'SAME_WINDOW');}}",
+  "onClick": "{{navigateTo('In Workshop', {}, 'SAME_WINDOW');}}",
   "originalBottomRow": 26,
   "originalTopRow": 11,
   "parentColumnSpace": 27.384765625,
@@ -40,5 +40,5 @@
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "vi3xfjyvej",
-  "widgetName": "IconButton1Copy1"
+  "widgetName": "In_Workshop_Btn"
 }

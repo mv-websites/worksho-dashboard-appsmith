@@ -20,6 +20,10 @@
     {
       "id": "Home",
       "isDefault": true
+    },
+    {
+      "id": "In Workshop",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
