@@ -34,7 +34,7 @@
   "labelText": "Customer",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 0,
+  "leftColumn": 21,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -51,12 +51,12 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 21,
+  "rightColumn": 42,
   "serverSideFiltering": false,
   "sourceData": "{{Get_Customers.data}}",
   "topRow": 4,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "i4ljopuf34",
-  "widgetName": "Select1"
+  "widgetName": "Customer_Select"
 }

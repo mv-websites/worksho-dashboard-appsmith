@@ -1,5 +1,0 @@
-SELECT DISTINCT(call_status.Call_Status_Description) as label, call_status.Call_Status_Description as value
-FROM SICLOPS_LIVE_MVL.dbo.vw_LAYD_Calls calls
-LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_LU_Call_Status call_status
-	ON calls.Last_Event_Status = call_status.Call_Status_Code 
-WHERE Last_Event_Status IN ('XR', 'M1', 'PK', 'HV', 'PB', 'PD', 'RB', 'RH', 'VF', 'WC', 'WS');

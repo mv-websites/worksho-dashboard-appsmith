@@ -34,7 +34,7 @@
   "labelText": "Equipment/Description",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 21,
+  "leftColumn": 42,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -51,12 +51,12 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 43,
+  "rightColumn": 64,
   "serverSideFiltering": false,
   "sourceData": "{{Get_Description.data}}",
   "topRow": 4,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "1vcmypi88n",
-  "widgetName": "Select2"
+  "widgetName": "Description_Select"
 }

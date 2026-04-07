@@ -48,5 +48,8 @@ export default {
 				"value": "VF"
 			}
 		]
+	},
+	onStatusSelect() {
+		showAlert("hi!!");
 	}
 }
