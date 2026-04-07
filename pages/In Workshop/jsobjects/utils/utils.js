@@ -1,13 +1,4 @@
 export default {
-	// getCustomers () {
-		// const workshopList = Get_Workshop_List.data
-		// const customerData = workshopList.map(item => item.Co_Name);
-		// const uniqueCustomers = [...new Set(customerData)]
-		// const customerObject = uniqueCustomers.map((customer) => {
-			// return {"label": customer, "value": customer}
-		// })
-		// return customerObject;
-	// }
 	getStatus() {
 		return [
 			{
@@ -51,5 +42,10 @@ export default {
 	},
 	selectStatusFilter(value) {
 		Status_Select.setSelectedOption(value)
+	},
+	autoRefresh() {
+		setInterval(() => {
+			Get_Status_Count.run()
+		}, 60 * 1000);
 	}
 }
