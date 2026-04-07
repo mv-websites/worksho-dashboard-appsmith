@@ -49,7 +49,7 @@ export default {
 			}
 		]
 	},
-	onStatusSelect() {
-		showAlert("hi!!");
+	selectStatusFilter(value) {
+		Status_Select.setSelectedOption(value)
 	}
 }

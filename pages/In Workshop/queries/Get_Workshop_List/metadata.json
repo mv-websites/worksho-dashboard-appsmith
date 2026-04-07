@@ -5,12 +5,12 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT calls.Call_Ref, \n\tcall_status.Call_Status_Description, \n\tequipment.Description ,\n\tclient.Co_Name ,\n\tcalls.Order_No, \n\tcalls.Date_Received, \n\tcall_more.CALLM_Data119 as com_sales_val,\n\tcall_more.CALLM_Data118 as wksp_proposed_date,\n\tcalls.Problem,\n\tcalls.Actual_Labour_Cost,\n\tcalls.Actual_Parts_Cost,\n\tcalls.Related_Job,\n\tcalls.Scheduled_Date_Time_End,\n\tcalls.Call_Next_ETA\nFROM SICLOPS_LIVE_MVL.dbo.vw_LAYD_Calls calls\nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_LU_Call_Status call_status\n\tON calls.Last_Event_Status = call_status.Call_Status_Code \nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Equipment equipment\n\tON calls.Link_to_Equipment = equipment.Equipment_Code \nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Clients client\n\tON equipment.Link_to_Client = client.Client_Ref \nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Call_More call_more\n\tON call_more.CALLM_Link_to_Call = calls.Call_Ref \nWHERE Last_Event_Status IN ('XR', 'M1', 'PK', 'HV', 'PB', 'PD', 'RB', 'RH', 'VF', 'WC', 'WS');",
+      "body": "SELECT calls.Call_Ref, \n\tcall_status.Call_Status_Description, \n\tequipment.Description ,\n\tclient.Co_Name ,\n\tcalls.Order_No, \n\tcalls.Date_Received, \n\tcall_more.CALLM_Data119 as com_sales_val,\n\tcall_more.CALLM_Data118 as wksp_proposed_date,\n\tcalls.Problem,\n\tcalls.Actual_Labour_Cost,\n\tcalls.Actual_Parts_Cost,\n\tcalls.Related_Job,\n\tcalls.Scheduled_Date_Time_End,\n\tcalls.Call_Next_ETA\nFROM SICLOPS_LIVE_MVL.dbo.vw_LAYD_Calls calls\nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_LU_Call_Status call_status\n\tON calls.Last_Event_Status = call_status.Call_Status_Code \nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Equipment equipment\n\tON calls.Link_to_Equipment = equipment.Equipment_Code \nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Clients client\n\tON equipment.Link_to_Client = client.Client_Ref \nLEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Call_More call_more\n\tON call_more.CALLM_Link_to_Call = calls.Call_Ref \nWHERE\tLast_Event_Status {{Status_Select.selectedOptionValue === \"\" ? `IN ('XR', 'M1', 'PK', 'HV', 'PB', 'PD', 'RB', 'RH', 'VF', 'WC', 'WS')` : `= '${Status_Select.selectedOptionValue}'` }}\n{{Customer_Select.selectedOptionValue === \"\"? `` : `AND client.Co_Name = '${Customer_Select.selectedOptionValue}'`}}\n{{Description_Select.selectedOptionValue === \"\"? `` : `AND equipment.Description = '${Description_Select.selectedOptionValue}'`}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "timeoutInMillisecond": 10000
@@ -22,7 +22,11 @@
       "name": "MV-SQL-01",
       "pluginId": "mssql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "Get_Workshop_List",
     "pageId": "In Workshop",
     "runBehaviour": "AUTOMATIC",

@@ -1,12 +1,16 @@
 {
-  "gitSyncId": "69ce6f754e84af74d2afd110_bad27217-1302-4ac9-9bab-05aa98a0e589",
-  "id": "In Workshop_utils.onStatusSelect",
+  "gitSyncId": "69ce6f754e84af74d2afd110_76575e2e-814b-4772-b889-3d4b1be5c5ab",
+  "id": "In Workshop_utils.selectStatusFilter",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "value"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "utils.onStatusSelect",
-    "name": "onStatusSelect",
+    "fullyQualifiedName": "utils.selectStatusFilter",
+    "name": "selectStatusFilter",
     "pageId": "In Workshop",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
