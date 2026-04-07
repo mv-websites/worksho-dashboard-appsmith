@@ -1,13 +1,12 @@
 SELECT calls.Call_Ref, 
 	call_status.Call_Status_Description, 
 	equipment.Description ,
-	client.Co_Name,
-	call_type.Call_Type_Description, 
+	client.Co_Name ,
 	calls.Order_No, 
 	calls.Date_Received, 
+	call_more.CALLM_Data119 as com_sales_val,
+	call_more.CALLM_Data118 as wksp_proposed_date,
 	calls.Problem,
-	calls.Calculated_Labour_Charge,
-	calls.Calculated_Parts_Charge,
 	calls.Actual_Labour_Cost,
 	calls.Actual_Parts_Cost,
 	calls.Related_Job,
@@ -16,10 +15,10 @@ SELECT calls.Call_Ref,
 FROM SICLOPS_LIVE_MVL.dbo.vw_LAYD_Calls calls
 LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_LU_Call_Status call_status
 	ON calls.Last_Event_Status = call_status.Call_Status_Code 
-LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_LU_Call_Types call_type
-	ON calls.Call_Type = call_type.Call_Type_Code  
 LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Equipment equipment
 	ON calls.Link_to_Equipment = equipment.Equipment_Code 
 LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Clients client
 	ON equipment.Link_to_Client = client.Client_Ref 
+LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Call_More call_more
+	ON call_more.CALLM_Link_to_Call = calls.Call_Ref 
 WHERE Last_Event_Status IN ('XR', 'M1', 'PK', 'HV', 'PB', 'PD', 'RB', 'RH', 'VF', 'WC', 'WS');
