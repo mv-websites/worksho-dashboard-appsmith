@@ -7,7 +7,7 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
     "5xizy9b8cy": {
-      "data": "\n{{ \n  Get_Status_Count.data\n    .filter(row => row.Call_Status_Description !== 'AVAILABLE')\n    .map(row => {\n      return {\n        x: row.Call_Status_Description,\n        y: row.Status_Count,\n        event_code: row.Last_Event_Status\n      }\n    })\n}}",
+      "data": "\n{{ \n  Get_Status_Count.data\n    .filter(row => (row.Call_Status_Description !== 'AVAILABLE') && (row.Last_Event_Status !== 'RW'))\n    .map(row => {\n      return {\n        x: row.Call_Status_Description,\n        y: row.Status_Count,\n        event_code: row.Last_Event_Status\n      }\n    })\n}}",
       "seriesName": ""
     }
   },

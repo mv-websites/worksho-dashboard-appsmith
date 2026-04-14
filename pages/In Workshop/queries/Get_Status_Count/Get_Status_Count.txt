@@ -4,10 +4,30 @@ SELECT
     COUNT(*) AS Status_Count
 FROM SICLOPS_LIVE_MVL.dbo.vw_LAYD_Calls calls
 LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_LU_Call_Status call_status
-    ON calls.Last_Event_Status = call_status.Call_Status_Code 
-WHERE calls.Last_Event_Status IN ('XR', 'M1', 'PK', 'HV', 'PB', 'PD', 'RB', 'RH', 'VF', 'WC', 'WS', 'AV')
+    ON calls.Last_Event_Status = call_status.Call_Status_Code
+WHERE calls.Last_Event_Status IN (
+    'XR','M1','PK','HV','PB','PD',
+    'RB','RH','VF','WC','WS','AV'
+)
+GROUP BY
+    calls.Last_Event_Status,
+    call_status.Call_Status_Description
+UNION ALL
+SELECT
+    calls.Last_Event_Status,
+    call_status.Call_Status_Description,
+    COUNT(*) AS Status_Count
+FROM SICLOPS_LIVE_MVL.dbo.vw_LAYD_Calls calls
+INNER JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_LU_Call_Status call_status
+    ON calls.Last_Event_Status = call_status.Call_Status_Code
+LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Clients client
+	ON calls.Link_to_Client  = client.Client_Ref 
+WHERE calls.Last_Event_Status = 'RW'
+  AND (
+        client.Co_Name LIKE '%MOSSFIELD%' OR client.Co_Name LIKE '%MILLERS%'
+  )
 GROUP BY
     calls.Last_Event_Status,
     call_status.Call_Status_Description
 ORDER BY
-    calls.Last_Event_Status;
+    Last_Event_Status;
