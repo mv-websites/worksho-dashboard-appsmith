@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_7758965e-0e91-446b-bf07-2333319acd27",
+  "id": "In Workshop_data",
+  "unpublishedCollection": {
+    "name": "data",
+    "pageId": "In Workshop",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

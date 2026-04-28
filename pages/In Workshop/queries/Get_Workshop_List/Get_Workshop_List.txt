@@ -1,6 +1,7 @@
 SELECT calls.Call_Ref, 
 	call_status.Call_Status_Description, 
 	equipment.Description ,
+	concat(equipment.Make, ' | ', equipment.Model) as Make_Model,
 	client.Co_Name ,
 	calls.Order_No, 
 	calls.Date_Received, 

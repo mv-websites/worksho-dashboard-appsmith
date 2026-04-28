@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 72,
+  "bottomRow": 56,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{\"tips\": \"{{Get_Status_Count.data}}\",\n\"Status_Select\": \"{{Status_Select.selectedOptionValue}}\"}",
   "dynamicBindingPathList": [
@@ -44,7 +44,7 @@
   "mobileTopRow": 14,
   "needsErrorInfo": false,
   "onStatusSelect": "{{utils.selectStatusFilter(value);}}",
-  "originalBottomRow": 56,
+  "originalBottomRow": 72,
   "originalTopRow": 16,
   "parentColumnSpace": 30.5625,
   "parentId": "0",
