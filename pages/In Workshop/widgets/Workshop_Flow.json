@@ -44,7 +44,7 @@
   "mobileTopRow": 14,
   "needsErrorInfo": false,
   "onStatusSelect": "{{utils.selectStatusFilter(value);}}",
-  "originalBottomRow": 72,
+  "originalBottomRow": 56,
   "originalTopRow": 16,
   "parentColumnSpace": 30.5625,
   "parentId": "0",

@@ -47,5 +47,15 @@ export default {
 		setInterval(() => {
 			Get_Status_Count.run()
 		}, 60 * 1000);
+	},
+	async updateDate () {
+		await Get_Call_Data.clear()
+		await Update_Call_Date.run()
+		await Get_Call_Data.run()
+	},
+		async updateComSalesVal () {
+		await Get_Call_Data.clear()
+		await Update_Call_Sales_Val.run()
+		await Get_Call_Data.run()
 	}
 }

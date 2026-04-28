@@ -40,15 +40,15 @@
     "Co_Name",
     "Order_No",
     "com_sales_val",
-    "wksp_proposed_date",
     "Problem",
     "Actual_Labour_Cost",
     "Actual_Parts_Cost",
     "Related_Job",
     "Scheduled_Date_Time_End",
-    "Call_Next_ETA"
+    "Call_Next_ETA",
+    "wksp_proposed_date"
   ],
-  "columnUpdatedAt": 1777375155948,
+  "columnUpdatedAt": 1777377259103,
   "columnWidthMap": {
     "Actual_Labour_Cost": 180,
     "Calculated_Parts_Charge": 182,
@@ -60,6 +60,7 @@
     "Make_Model": 238,
     "Problem": 256,
     "Scheduled_Date_Time_End": 110.875,
+    "com_sales_val": 162,
     "wksp_proposed_date": 186
   },
   "customIsLoading": false,
@@ -79,9 +80,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
     },
     {
       "key": "primaryColumns.Call_Ref.computedValue"
@@ -105,9 +103,6 @@
       "key": "primaryColumns.com_sales_val.computedValue"
     },
     {
-      "key": "primaryColumns.wksp_proposed_date.computedValue"
-    },
-    {
       "key": "primaryColumns.Problem.computedValue"
     },
     {
@@ -127,6 +122,12 @@
     },
     {
       "key": "primaryColumns.Make_Model.computedValue"
+    },
+    {
+      "key": "primaryColumns.wksp_proposed_date.computedValue"
+    },
+    {
+      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -134,12 +135,19 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.wksp_proposed_date.onDateSelected"
+    },
+    {
+      "key": "primaryColumns.com_sales_val.onSubmit"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "LEFT",
-  "inlineEditingSaveOption": "ROW_LEVEL",
+  "inlineEditingSaveOption": "CUSTOM",
   "isLoading": false,
   "isSortable": true,
   "isVisible": true,
@@ -156,11 +164,12 @@
   "mobileRightColumn": 47,
   "mobileTopRow": 36,
   "needsErrorInfo": false,
-  "originalBottomRow": 180,
-  "originalTopRow": 92,
+  "originalBottomRow": 164,
+  "originalTopRow": 76,
   "parentColumnSpace": 30.5625,
   "parentId": "0",
   "parentRowSpace": 10,
+  "primaryColumnId": "Call_Ref",
   "primaryColumns": {
     "Actual_Labour_Cost": {
       "alias": "Actual_Labour_Cost",
@@ -575,25 +584,26 @@
       "alias": "com_sales_val",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"com_sales_val\"])) : com_sales_val })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
+      "columnType": "currency",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Get_Call_Data.data.find(row => row.Call_Id === currentRow.Call_Ref)?.com_sales_val)) : Get_Call_Data.data.find(row => row.Call_Id === currentRow.Call_Ref)?.com_sales_val })()}}",
+      "currencyCode": "GBP",
+      "decimals": 2,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
       "id": "com_sales_val",
       "index": 6,
-      "isCellEditable": false,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "Com Sales Val",
       "notation": "standard",
+      "onSubmit": "{{utils.updateComSalesVal();}}",
       "originalId": "com_sales_val",
       "sticky": "",
       "textSize": "0.875rem",
@@ -606,27 +616,33 @@
       "alias": "wksp_proposed_date",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"wksp_proposed_date\"])) : wksp_proposed_date })()}}",
+      "cellBackground": "",
+      "columnType": "date",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Get_Call_Data.data.find(row => row.Call_Id === currentRow.Call_Ref)?.workshop_eta)) : Get_Call_Data.data.find(row => row.Call_Id === currentRow.Call_Ref)?.workshop_eta })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "wksp_proposed_date",
-      "index": 7,
-      "isCellEditable": false,
+      "index": 8,
+      "inputFormat": "YYYY-MM-DD",
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Wksp Proposed Date",
+      "label": "Workshop ETA",
       "notation": "standard",
+      "onDateSelected": "{{utils.updateDate();}}",
       "originalId": "wksp_proposed_date",
+      "outputFormat": "DD/MM/YY",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -639,6 +655,7 @@
   "rightColumn": 63,
   "searchKey": "",
   "serverSidePaginationEnabled": true,
+  "showInlineEditingOptionDropdown": true,
   "tableData": "{{Get_Workshop_List.data}}",
   "textSize": "0.875rem",
   "topRow": 76,
