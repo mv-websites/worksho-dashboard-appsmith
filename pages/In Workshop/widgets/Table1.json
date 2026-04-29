@@ -32,6 +32,7 @@
     }
   },
   "columnOrder": [
+    "Call_Next_ETA",
     "Call_Ref",
     "Date_Received",
     "Call_Status_Description",
@@ -45,13 +46,13 @@
     "Actual_Parts_Cost",
     "Related_Job",
     "Scheduled_Date_Time_End",
-    "Call_Next_ETA",
     "wksp_proposed_date"
   ],
-  "columnUpdatedAt": 1777377259103,
+  "columnUpdatedAt": 1777448408380,
   "columnWidthMap": {
     "Actual_Labour_Cost": 180,
     "Calculated_Parts_Charge": 182,
+    "Call_Next_ETA": 116,
     "Call_Ref": 98,
     "Call_Status_Description": 154,
     "Co_Name": 248,
@@ -128,6 +129,12 @@
     },
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.Call_Next_ETA.boxShadow"
+    },
+    {
+      "key": "primaryColumns.Call_Next_ETA.borderRadius"
     }
   ],
   "dynamicPropertyPathList": [
@@ -141,6 +148,9 @@
     },
     {
       "key": "primaryColumns.com_sales_val.onSubmit"
+    },
+    {
+      "key": "primaryColumns.Call_Next_ETA.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -237,9 +247,14 @@
       "alias": "Call_Next_ETA",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "date",
+      "borderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#00253a",
+      "buttonLabel": "View More",
+      "columnType": "button",
       "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Call_Next_ETA\"])) : Call_Next_ETA })()}}",
       "currencyCode": "USD",
+      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
@@ -253,12 +268,13 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "Call_Next_ETA",
+      "isVisible": true,
+      "label": "View More",
       "notation": "standard",
+      "onClick": "{{showModal(View_More_Modal.name);}}",
       "originalId": "Call_Next_ETA",
       "outputFormat": "DD/MM/YYYY",
-      "sticky": "",
+      "sticky": "left",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
