@@ -50,12 +50,20 @@ export default {
 	},
 	async updateDate () {
 		await Get_Call_Data.clear()
-		await Update_Call_Date.run()
+		await Update_Call_Date.run(() => {
+			showAlert("Updated workshot ETA Successfully!", "success")
+		},(error) => {
+			showAlert("Failed to update workshot ETA!", "error")
+		})
 		await Get_Call_Data.run()
 	},
-		async updateComSalesVal () {
+	async updateComSalesVal () {
 		await Get_Call_Data.clear()
-		await Update_Call_Sales_Val.run()
+		await Update_Call_Sales_Val.run(() => {
+			showAlert("Updated Com Sales Value Successfully!", "success")
+		}, (error) => {
+			showAlert("Failed to update Com Sales Value!", "error")
+		})
 		await Get_Call_Data.run()
 	}
 }
