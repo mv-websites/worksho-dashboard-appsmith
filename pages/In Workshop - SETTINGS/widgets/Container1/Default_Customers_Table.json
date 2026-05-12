@@ -80,6 +80,9 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.value.selectOptions"
     }
   ],
   "dynamicPropertyPathList": [
@@ -203,7 +206,7 @@
       "alias": "value",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "text",
+      "columnType": "select",
       "computedValue": "{{(() => { const tableData = Default_Customers_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"value\"])) : value })()}}",
       "currencyCode": "USD",
       "decimals": 0,
@@ -223,6 +226,7 @@
       "label": "Customer",
       "notation": "standard",
       "originalId": "value",
+      "selectOptions": "{{(() => { const tableData = Default_Customers_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( appsmith.URL.queryParams.customer_list\n    .split(\",\")\n    .map(item => ({\n      label: item.trim(),\n      value: item.trim()\n    }))\n)) :  appsmith.URL.queryParams.customer_list\n    .split(\",\")\n    .map(item => ({\n      label: item.trim(),\n      value: item.trim()\n    }))\n })()}}",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
