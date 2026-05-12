@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -28,7 +28,7 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "txu9jc3s43",
+  "key": "ans7z4ik8x",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelText": "Customer",
@@ -39,8 +39,8 @@
   "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 11,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 41,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
   "optionLabel": "label",
@@ -48,15 +48,15 @@
   "parentColumnSpace": 29.294921875,
   "parentId": "0w0h4vzhvc",
   "parentRowSpace": 10,
-  "placeholderText": "Select option",
+  "placeholderText": "Select option(s)",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 42,
   "serverSideFiltering": false,
   "sourceData": "{{Get_Customers.data}}",
   "topRow": 4,
-  "type": "SELECT_WIDGET",
+  "type": "MULTI_SELECT_WIDGET_V2",
   "version": 1,
-  "widgetId": "i4ljopuf34",
-  "widgetName": "Customer_Select"
+  "widgetId": "rm9t889lgo",
+  "widgetName": "Customer_Select_Multi"
 }
