@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "69d8cd37f651a26dd0ad24fb_6cbddc3a-df3b-4749-a41c-bdb8389a8dc9",
-  "id": "In Workshop_Default_Customers",
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_6a71f5ad-78cb-4781-a954-4dbcd91153fb",
+  "id": "In Workshop - SETTINGS_Description",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT filter_type, value FROM mv_commercial.MV11_All_Default_Filters \n\tWHERE application_id = 'workshop_v2' \n\tORDER BY id DESC;",
+      "body": "SELECT id, value FROM mv_commercial.MV11_All_Default_Filters \n\tWHERE application_id = 'workshop_v2' \n\t\tAND filter_type = 'description'\n\tORDER BY id DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,8 +23,8 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "Default_Customers",
-    "pageId": "In Workshop",
+    "name": "Description",
+    "pageId": "In Workshop - SETTINGS",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }

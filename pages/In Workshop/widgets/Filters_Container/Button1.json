@@ -30,7 +30,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('In Workshop - SETTINGS', {\n  \"customer_list\": Get_Customers.data.map(customer => customer.value)\n}, 'SAME_WINDOW');}}",
+  "onClick": "{{navigateTo('In Workshop - SETTINGS', {\n  \"customer_list\": Get_Customers.data.map(customer => customer.value),\n\t\"description_list\": Get_Description.data.map(description => description.value)\n}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 29.294921875,
   "parentId": "0w0h4vzhvc",
   "parentRowSpace": 10,
