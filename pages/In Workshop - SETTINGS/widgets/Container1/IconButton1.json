@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 41,
+  "boxShadow": "none",
+  "buttonColor": "#ef4444",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "trash",
+  "isDisabled": "{{Default_Customers_Table.selectedRow.id >= 1? false : true}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "bzsrwln19z",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 41,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 4,
+  "mobileTopRow": 37,
+  "needsErrorInfo": false,
+  "onClick": "{{Delete_Default_Value.run({\n  \"id\": Default_Customers_Table.selectedRow.id\n}).then(() => {\n  showAlert('Successfully deleted!', 'success');\n  Customers.run();\n}).catch(() => {\n  showAlert('Failed to delete ' + Default_Customers_Table.selectedRow.value + '!', 'error');\n});}}",
+  "parentColumnSpace": 29.294921875,
+  "parentId": "0g2v7q7vnl",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 3,
+  "topRow": 37,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "9vn35k2zmr",
+  "widgetName": "IconButton1"
+}

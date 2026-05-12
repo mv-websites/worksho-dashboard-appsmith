@@ -1,0 +1,4 @@
+SELECT value FROM mv_commercial.MV11_All_Default_Filters 
+	WHERE application_id = 'workshop_v2' 
+		AND filter_type = 'customer'
+	ORDER BY id DESC;

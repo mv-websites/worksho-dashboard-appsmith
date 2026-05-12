@@ -1,12 +1,12 @@
 {
-  "gitSyncId": "69ce6f754e84af74d2afd110_19a41e47-9f87-4a19-b49d-553ba7761eb4",
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_0c643f3e-4037-4f87-a9c9-88db8de903fd",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 1820,
+          "bottomRow": 720,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "In Workshop",
-    "slug": "in-workshop"
+    "name": "In Workshop - SETTINGS",
+    "slug": "in-workshop-settings"
   }
 }

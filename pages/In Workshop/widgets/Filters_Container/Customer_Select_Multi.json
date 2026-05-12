@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_Customers.data.map(customer => customer.value)))(Customer_Select_Multi.options, Customer_Select_Multi.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,6 +14,9 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",

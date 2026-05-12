@@ -33,6 +33,10 @@
     {
       "id": "In Workshop",
       "isDefault": false
+    },
+    {
+      "id": "In Workshop - SETTINGS",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
