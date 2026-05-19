@@ -37,6 +37,10 @@
     {
       "id": "In Workshop - SETTINGS",
       "isDefault": false
+    },
+    {
+      "id": "Production Schedule",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
