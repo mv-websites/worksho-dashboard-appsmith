@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_ffcd0e8a-fb54-4b84-8787-4bfb4879cdc1",
+  "id": "Production Schedule_date",
+  "unpublishedCollection": {
+    "name": "date",
+    "pageId": "Production Schedule",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
