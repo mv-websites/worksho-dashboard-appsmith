@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69d8cd37f651a26dd0ad24fb_a5b77bb8-1214-4996-9315-ad174edf8811",
-  "id": "Production Schedule_date.dateToSlot",
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_9e3ec18e-5e45-4431-b43f-d3ae50f8c260",
+  "id": "Production Schedule_date.slotToWeek",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,16 +8,8 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "bookingYear",
-          "value": "{{2026}}"
-        },
-        {
-          "name": "targetDate",
-          "value": "{{new Date('2026-06-03')}}"
-        },
-        {
-          "name": "halfDay",
-          "value": "AM"
+          "name": "slot",
+          "value": "{{324}}"
         }
       ],
       "paginationType": "NONE",
@@ -35,8 +27,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "date.dateToSlot",
-    "name": "dateToSlot",
+    "fullyQualifiedName": "date.slotToWeek",
+    "name": "slotToWeek",
     "pageId": "Production Schedule",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

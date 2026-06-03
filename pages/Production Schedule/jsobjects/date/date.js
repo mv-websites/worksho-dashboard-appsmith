@@ -8,6 +8,10 @@ export default {
 
 		return d;
 	},
+	/**
+	* SLOT TO DATE
+	* Converts a slot number to a date and whether it is AM or PM
+	*/
 	slotToDate(year = new Date().getFullYear(), slot = 17) {
 		const firstMonday = this.getFirstFullWeekMonday(year);
 		const weekIndex = Math.floor(slot / 10);
@@ -27,7 +31,11 @@ export default {
 			halfDay: amPmIndex === 0 ? 'AM' : 'PM'
 		};
 	},
-	dateToSlot(bookingYear = 2026, targetDate = new Date('2026-04-13'), halfDay = 'AM') {
+	/**
+	* DATE TO SLOT
+	* Converts a date to a slot number
+	*/
+	dateToSlot(bookingYear = 2026, targetDate = new Date('2026-06-03'), halfDay = 'AM') {
 		const firstMonday = this.getFirstFullWeekMonday(bookingYear);
 		const msPerDay = 1000 * 60 * 60 * 24;
 		const diffDays = Math.floor(
@@ -47,5 +55,8 @@ export default {
 			(dayIndex * 2) +
 			amPmIndex
 		);
+	},
+	slotToWeek(slot = 324) {
+		return Math.floor(slot / 10) + 1;
 	}
 }

@@ -1,0 +1,18 @@
+SELECT
+    year,
+    slot,
+    DATE_ADD(
+        -- first Monday of first full week
+        DATE_ADD(
+            MAKEDATE(year, 1),
+            INTERVAL (
+                (9 - DAYOFWEEK(MAKEDATE(year,1))) % 7
+            ) DAY
+        ),
+        INTERVAL (
+            (FLOOR(slot / 10) * 7)
+            +
+            FLOOR((slot % 10) / 2)
+        ) DAY
+    ) AS slot_date
+FROM mv_commercial.MV11_Workshop_time_tentries;
