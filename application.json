@@ -41,6 +41,10 @@
     {
       "id": "Production Schedule",
       "isDefault": false
+    },
+    {
+      "id": "People",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

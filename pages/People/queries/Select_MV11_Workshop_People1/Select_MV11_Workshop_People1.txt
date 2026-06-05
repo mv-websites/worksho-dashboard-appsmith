@@ -1,0 +1,8 @@
+SELECT
+  *
+FROM
+  MV11_Workshop_People
+WHERE
+  name LIKE '%{{Table1.searchText}}%'
+ORDER BY
+  {{Table1.sortOrder.column || 'id'}} {{Table1.sortOrder.order !== "desc" ? "" : "DESC"}};

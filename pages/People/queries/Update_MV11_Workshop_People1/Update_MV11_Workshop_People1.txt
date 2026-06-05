@@ -1,0 +1,1 @@
+UPDATE MV11_Workshop_People SET siclops_ref= '{{Table1.updatedRow.siclops_ref}}', name= '{{Table1.updatedRow.name}}', active= '{{Number(Table1.updatedRow.active)}}' WHERE id= '{{Table1.updatedRow.id}}';

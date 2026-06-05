@@ -1,0 +1,5 @@
+SELECT pos.id, pos.position_name, pos.colour  
+FROM mv_commercial.MV11_Workshop_Personnel_Positions pp
+LEFT JOIN mv_commercial.MV11_Workshop_Positions pos
+	ON pp.position_id = pos.id
+WHERE person_id = {{Table1.selectedRow.id}};

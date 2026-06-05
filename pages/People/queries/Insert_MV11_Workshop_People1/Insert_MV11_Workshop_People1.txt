@@ -1,0 +1,1 @@
+INSERT INTO MV11_Workshop_People (siclops_ref,name,active) VALUES ('{{(Table1.newRow || {}).siclops_ref}}','{{(Table1.newRow || {}).name}}','{{(Table1.newRow || {}).active}}')

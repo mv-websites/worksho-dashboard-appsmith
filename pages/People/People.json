@@ -1,12 +1,12 @@
 {
-  "gitSyncId": "69d8cd37f651a26dd0ad24fb_d79bf003-2b9a-421e-a157-471a07f479a5",
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_6062ec2b-65f9-45ce-a703-ae1bf57eca47",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 660,
+          "bottomRow": 730,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Production Schedule",
-    "slug": "production-schedule"
+    "name": "People",
+    "slug": "people"
   }
 }
