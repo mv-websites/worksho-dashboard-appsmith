@@ -1,4 +1,7 @@
 export default {
+	logVisitOnLoad() {
+		Log_Visit.run();
+	},
 	getStatus() {
 		return [
 			{
