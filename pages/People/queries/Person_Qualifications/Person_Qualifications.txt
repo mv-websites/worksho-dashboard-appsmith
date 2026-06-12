@@ -1,0 +1,7 @@
+SELECT eq.id, eq.description as type, CONCAT(eq.make, ' - ', eq.model) as make_model
+FROM mv_commercial.MV11_Workshop_Personnel_Qualifications pp
+LEFT JOIN mv_commercial.MV11_Workshop_equipment eq
+	ON pp.equipment_id = eq.id
+WHERE person_id = {{Table1.selectedRow.id}}
+AND active = 1
+ORDER BY eq.description ASC;

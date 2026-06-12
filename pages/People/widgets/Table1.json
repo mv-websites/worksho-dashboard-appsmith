@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 73,
+  "bottomRow": 86,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -134,6 +134,9 @@
     },
     {
       "key": "primaryColumns.EditActions1.onSave"
+    },
+    {
+      "key": "onRowSelected"
     }
   ],
   "enableClientSideSearch": false,
@@ -160,6 +163,7 @@
   "needsErrorInfo": false,
   "onAddNewRowSave": "{{Insert_MV11_Workshop_People1.run(() => {\n            showAlert(\"Successfully created!\");\n            Select_MV11_Workshop_People1.run()\n          }, () => {\n            showAlert(\"Unable to create!\");\n          })}}",
   "onPageChange": "{{\n            Select_MV11_Workshop_People1.run();\n            Total_record_MV11_Workshop_People1.run()\n          }}",
+  "onRowSelected": "{{utils.onTable1RowChange();}}",
   "onSearchTextChanged": "{{\n            Select_MV11_Workshop_People1.run();\n            Total_record_MV11_Workshop_People1.run()\n          }}",
   "onSort": "{{\n            Select_MV11_Workshop_People1.run();\n            Total_record_MV11_Workshop_People1.run()\n          }}",
   "originalBottomRow": 73,

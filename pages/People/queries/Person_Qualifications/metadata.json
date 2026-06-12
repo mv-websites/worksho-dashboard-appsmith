@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "69d8cd37f651a26dd0ad24fb_818d3ee2-4d8e-4179-8c28-44e03e6c773d",
-  "id": "People_Person_Positions",
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_d9620f42-2afd-4320-9a3e-081c1b9355ff",
+  "id": "People_Person_Qualifications",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT pos.id, pos.position_name, pos.colour  \nFROM mv_commercial.MV11_Workshop_Personnel_Positions pp\nLEFT JOIN mv_commercial.MV11_Workshop_Positions pos\n\tON pp.position_id = pos.id\nWHERE person_id = {{Table1.selectedRow.id}}\nAND pos.active = 1\nORDER BY pos.position_name ASC;",
+      "body": "SELECT eq.id, eq.description as type, CONCAT(eq.make, ' - ', eq.model) as make_model\nFROM mv_commercial.MV11_Workshop_Personnel_Qualifications pp\nLEFT JOIN mv_commercial.MV11_Workshop_equipment eq\n\tON pp.equipment_id = eq.id\nWHERE person_id = {{Table1.selectedRow.id}}\nAND active = 1\nORDER BY eq.description ASC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "Person_Positions",
+    "name": "Person_Qualifications",
     "pageId": "People",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
