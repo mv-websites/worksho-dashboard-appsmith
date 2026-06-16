@@ -45,6 +45,8 @@
   "needsErrorInfo": false,
   "optionLabel": "position_name",
   "optionValue": "id",
+  "originalBottomRow": 13,
+  "originalTopRow": 6,
   "parentColumnSpace": 15.4462890625,
   "parentId": "t7xpr85thw",
   "parentRowSpace": 10,

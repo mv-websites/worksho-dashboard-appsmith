@@ -4,5 +4,7 @@ FROM
   MV11_Workshop_People
 WHERE
   name LIKE '%{{Table1.searchText}}%'
+AND
+	active = {{!Inactive_People_Switch.isSwitchedOn}}
 ORDER BY
   {{Table1.sortOrder.column || 'id'}} {{Table1.sortOrder.order !== "desc" ? "" : "DESC"}};

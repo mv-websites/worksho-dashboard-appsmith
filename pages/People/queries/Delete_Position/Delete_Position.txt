@@ -1,0 +1,2 @@
+DELETE FROM mv_commercial.MV11_Workshop_Personnel_Positions
+WHERE position_id={{this.params.position_id}} AND person_id={{this.params.person_id}};

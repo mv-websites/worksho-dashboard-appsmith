@@ -137,6 +137,9 @@
     },
     {
       "key": "onRowSelected"
+    },
+    {
+      "key": "primaryColumns.active.onCheckChange"
     }
   ],
   "enableClientSideSearch": false,
@@ -166,7 +169,7 @@
   "onRowSelected": "{{utils.onTable1RowChange();}}",
   "onSearchTextChanged": "{{\n            Select_MV11_Workshop_People1.run();\n            Total_record_MV11_Workshop_People1.run()\n          }}",
   "onSort": "{{\n            Select_MV11_Workshop_People1.run();\n            Total_record_MV11_Workshop_People1.run()\n          }}",
-  "originalBottomRow": 73,
+  "originalBottomRow": 86,
   "originalTopRow": 21,
   "parentColumnSpace": 30.5625,
   "parentId": "0",
@@ -240,6 +243,7 @@
       "isVisible": true,
       "label": "Active",
       "notation": "standard",
+      "onCheckChange": "",
       "originalId": "active",
       "sticky": "",
       "textSize": "0.875rem",

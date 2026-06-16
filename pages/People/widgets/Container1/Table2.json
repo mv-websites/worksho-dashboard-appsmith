@@ -37,7 +37,7 @@
     "id",
     "colour"
   ],
-  "columnUpdatedAt": 1781273115148,
+  "columnUpdatedAt": 1781613659674,
   "columnWidthMap": {
     "customColumn1": 60
   },
@@ -84,9 +84,16 @@
     },
     {
       "key": "primaryColumns.position_name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.colour.cellBackground"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -108,8 +115,8 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 28,
   "needsErrorInfo": false,
-  "originalBottomRow": 36,
-  "originalTopRow": 8,
+  "originalBottomRow": 43,
+  "originalTopRow": 13,
   "parentColumnSpace": 30.5625,
   "parentId": "t7xpr85thw",
   "parentRowSpace": 10,
@@ -118,8 +125,9 @@
       "alias": "colour",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"colour\"])) : colour })()}}",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('')) : '' })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -175,6 +183,7 @@
       "label": "Delete",
       "labelColor": "#FFFFFF",
       "notation": "standard",
+      "onClick": "{{utils.deletePosition();}}",
       "originalId": "customColumn1",
       "sticky": "left",
       "textSize": "0.875rem",
@@ -218,9 +227,9 @@
       "alias": "position_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"colour\"])) : currentRow[\"colour\"] })()}}",
+      "cellBackground": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('#' + currentRow[\"colour\"])) : '#' + currentRow[\"colour\"] })()}}",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"position_name\"])) : position_name })()}}",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"position_name\"])) : currentRow[\"position_name\"] })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,

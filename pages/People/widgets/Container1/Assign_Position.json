@@ -18,28 +18,35 @@
       "key": "isDisabled"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "plus",
   "isDisabled": "{{Select_Position.selectedOptionValue? false : true}}",
   "isLoading": false,
   "isVisible": true,
   "key": "uy292cgo14",
-  "leftColumn": 17,
+  "leftColumn": 18,
   "minWidth": 50,
   "mobileBottomRow": 38,
   "mobileLeftColumn": 17,
   "mobileRightColumn": 21,
   "mobileTopRow": 34,
   "needsErrorInfo": false,
+  "onClick": "{{utils.assignPosition();}}",
+  "originalBottomRow": 13,
+  "originalTopRow": 8,
   "parentColumnSpace": 15.4462890625,
   "parentId": "t7xpr85thw",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 21,
-  "topRow": 6,
+  "topRow": 8,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "ycovk6vdkp",
-  "widgetName": "IconButton1"
+  "widgetName": "Assign_Position"
 }

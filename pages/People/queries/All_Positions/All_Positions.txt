@@ -1,3 +1,4 @@
-SELECT id, position_name, colour
-FROM mv_commercial.MV11_Workshop_Positions
-WHERE active = 1;
+SELECT p.id, p.position_name, p.colour
+FROM mv_commercial.MV11_Workshop_Positions p
+WHERE p.active = 1
+AND p.id NOT IN (SELECT position_id FROM mv_commercial.MV11_Workshop_Personnel_Positions WHERE person_id = {{Table1.selectedRow.id}});

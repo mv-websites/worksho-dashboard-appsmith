@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "69d8cd37f651a26dd0ad24fb_ee7d9b1d-de88-48fc-9c3b-55241ba7e298",
-  "id": "People_Select_MV11_Workshop_People1",
+  "gitSyncId": "69d8cd37f651a26dd0ad24fb_260443d5-5f11-4915-ba78-3f293c459a1d",
+  "id": "People_Add_Position",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  *\nFROM\n  MV11_Workshop_People\nWHERE\n  name LIKE '%{{Table1.searchText}}%'\nAND\n\tactive = {{!Inactive_People_Switch.isSwitchedOn}}\nORDER BY\n  {{Table1.sortOrder.column || 'id'}} {{Table1.sortOrder.order !== \"desc\" ? \"\" : \"DESC\"}};",
+      "body": "INSERT INTO mv_commercial.MV11_Workshop_Personnel_Positions\n(position_id, person_id)\nVALUES({{this.params.position_id}}, {{this.params.person_id}});",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "Select_MV11_Workshop_People1",
+    "name": "Add_Position",
     "pageId": "People",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }
