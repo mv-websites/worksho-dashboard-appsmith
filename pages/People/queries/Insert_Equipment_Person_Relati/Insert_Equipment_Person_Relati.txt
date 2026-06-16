@@ -1,0 +1,4 @@
+INSERT INTO mv_commercial.MV11_Workshop_Personnel_Qualifications
+	(person_id, equipment_id)
+	VALUES
+({{Table1.selectedRow.id}}, {{Table4.updatedRow.id}});

@@ -1,0 +1,14 @@
+SELECT
+    e.id,
+    e.description,
+    CONCAT(e.make, ' - ', e.model) as make_model,
+    CASE
+        WHEN q.person_id IS NOT NULL THEN 1
+        ELSE 0
+    END AS assigned
+FROM mv_commercial.MV11_Workshop_equipment e
+LEFT JOIN mv_commercial.MV11_Workshop_Personnel_Qualifications q
+    ON q.equipment_id = e.id
+   AND q.person_id = 2
+   AND e.active = 1
+ORDER BY e.description;

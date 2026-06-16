@@ -4,7 +4,7 @@
   "animateLoading": true,
   "bottomRow": 21,
   "boxShadow": "none",
-  "defaultSwitchState": true,
+  "defaultSwitchState": false,
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

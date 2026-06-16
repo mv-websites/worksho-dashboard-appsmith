@@ -55,5 +55,18 @@ export default {
 			showAlert("Failed to delete position with the following error: " + err.message, "error")
 			this.loadingModalTrigger(false)
 		}
+	},
+	async insertRemoveEquipmentPersonRelation() {
+		try {
+			if (Table4.updatedRow.assigned) { 
+				await Insert_Equipment_Person_Relati.run()
+			} else {
+				await Remove_Person_Qualification.run()
+			}
+		} catch (err) {
+			showAlert("Failed to alter user qulaification with the following error: " + err.message, "error")
+			await Get_All_Equipment.run()
+			this.loadingModalTrigger(false)
+		}
 	}
 }
