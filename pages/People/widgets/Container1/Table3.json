@@ -32,12 +32,11 @@
     }
   },
   "columnOrder": [
-    "customColumn1",
     "id",
     "type",
     "make_model"
   ],
-  "columnUpdatedAt": 1781273891723,
+  "columnUpdatedAt": 1781680376648,
   "columnWidthMap": {
     "customColumn1": 60,
     "type": 164
@@ -68,12 +67,6 @@
     },
     {
       "key": "primaryColumns.make_model.computedValue"
-    },
-    {
-      "key": "primaryColumns.customColumn1.borderRadius"
-    },
-    {
-      "key": "primaryColumns.customColumn1.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
@@ -109,44 +102,6 @@
   "parentId": "t7xpr85thw",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "customColumn1": {
-      "alias": "Delete",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "borderRadius": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
-      "boxShadow": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
-      "buttonColor": "#b91c1c",
-      "buttonStyle": "rgb(3, 179, 101)",
-      "columnType": "iconButton",
-      "computedValue": "",
-      "currencyCode": "USD",
-      "customAlias": "",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "iconName": "trash",
-      "id": "customColumn1",
-      "index": 3,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": true,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Delete",
-      "labelColor": "#FFFFFF",
-      "notation": "standard",
-      "originalId": "customColumn1",
-      "sticky": "left",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
     "id": {
       "alias": "id",
       "allowCellWrapping": false,

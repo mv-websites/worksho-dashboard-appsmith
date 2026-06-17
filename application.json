@@ -45,6 +45,10 @@
     {
       "id": "People",
       "isDefault": false
+    },
+    {
+      "id": "Settings",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

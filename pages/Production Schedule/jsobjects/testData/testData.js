@@ -98,7 +98,7 @@ export default {
 						}
 					]
 				},
-					{
+				{
 					"Call_Id": 1002234,
 					"eq_description": "FG059 Donut Fryer",
 					"bookings": [
