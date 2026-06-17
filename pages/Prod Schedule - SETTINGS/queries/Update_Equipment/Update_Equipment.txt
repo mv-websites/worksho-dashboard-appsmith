@@ -1,0 +1,3 @@
+UPDATE mv_commercial.MV11_Workshop_equipment
+SET make={{Equipment_Table.updatedRow.make}}, model={{Equipment_Table.updatedRow.model}}, description={{Equipment_Table.updatedRow.description}}, active={{Equipment_Table.updatedRow.active}}
+WHERE id={{Equipment_Table.updatedRow.id}};

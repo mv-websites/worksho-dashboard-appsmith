@@ -1,0 +1,42 @@
+{
+  "accentColor": "#1e3a8a",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "dynamicBindingPathList": [],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "soe7qatfz6",
+  "label": "Show Disabled",
+  "labelPosition": "Right",
+  "labelStyle": "BOLD",
+  "leftColumn": 46,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 56,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onChange": "{{Equipment.run()}}",
+  "parentColumnSpace": 28.8173828125,
+  "parentId": "fdxa6ahtzd",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 54,
+  "topRow": 1,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "6bb3mpf7wh",
+  "widgetName": "Equipment_Disabled_Switch"
+}

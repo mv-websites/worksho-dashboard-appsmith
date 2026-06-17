@@ -1,0 +1,3 @@
+UPDATE mv_commercial.MV11_Workshop_Positions
+SET position_name={{Positions_Table.updatedRow.position_name}}, colour={{Positions_Table.updatedRow.colour}}, active={{Positions_Table.updatedRow.active}}
+WHERE id={{Positions_Table.updatedRow.id}};

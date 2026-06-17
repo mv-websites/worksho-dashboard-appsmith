@@ -1,0 +1,3 @@
+SELECT id, position_name, colour, active
+FROM mv_commercial.MV11_Workshop_Positions
+WHERE active = {{!Position_Disabled_Switch.isSwitchedOn}};

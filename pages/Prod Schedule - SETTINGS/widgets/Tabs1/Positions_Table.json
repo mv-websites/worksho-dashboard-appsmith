@@ -1,10 +1,11 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowAddNewRow": true,
   "animateLoading": true,
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 61,
+  "bottomRow": 55,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -32,15 +33,15 @@
     }
   },
   "columnOrder": [
-    "customColumn1",
+    "active",
     "position_name",
     "colour",
     "id"
   ],
-  "columnUpdatedAt": 1781697267608,
+  "columnUpdatedAt": 1781690663710,
   "columnWidthMap": {
-    "customColumn1": 60,
-    "position_name": 234
+    "active": 105,
+    "position_name": 600
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -61,6 +62,9 @@
       "key": "boxShadow"
     },
     {
+      "key": "tableData"
+    },
+    {
       "key": "primaryColumns.id.computedValue"
     },
     {
@@ -70,10 +74,7 @@
       "key": "primaryColumns.colour.computedValue"
     },
     {
-      "key": "primaryColumns.customColumn1.borderRadius"
-    },
-    {
-      "key": "primaryColumns.customColumn1.boxShadow"
+      "key": "primaryColumns.active.computedValue"
     },
     {
       "key": "primaryColumns.colour.cellBackground"
@@ -84,69 +85,74 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.position_name.cellBackground"
-    },
-    {
       "key": "primaryColumns.colour.cellBackground"
     }
   ],
   "dynamicTriggerPathList": [
     {
-      "key": "primaryColumns.customColumn1.onClick"
+      "key": "primaryColumns.active.onCheckChange"
+    },
+    {
+      "key": "primaryColumns.position_name.onSubmit"
+    },
+    {
+      "key": "primaryColumns.colour.onSubmit"
+    },
+    {
+      "key": "onAddNewRowSave"
     }
   ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "LEFT",
-  "inlineEditingSaveOption": "ROW_LEVEL",
+  "inlineEditingSaveOption": "CUSTOM",
   "isLoading": false,
   "isSortable": true,
   "isVisible": true,
-  "isVisibleDownload": false,
+  "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": false,
-  "isVisibleSearch": false,
-  "key": "qva789vkkw",
+  "isVisibleSearch": true,
+  "key": "2xr0a3ucif",
   "label": "Data",
-  "leftColumn": 1,
+  "leftColumn": 9,
   "minWidth": 450,
-  "mobileBottomRow": 56,
-  "mobileLeftColumn": 30,
-  "mobileRightColumn": 64,
-  "mobileTopRow": 28,
+  "mobileBottomRow": 41,
+  "mobileLeftColumn": 12,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 13,
   "needsErrorInfo": false,
-  "originalBottomRow": 61,
-  "originalTopRow": 13,
-  "parentColumnSpace": 30.5625,
-  "parentId": "t7xpr85thw",
+  "onAddNewRowSave": "{{Create_Position.run().then(() => {\n  Positions.run();\n}).catch(() => {\n  showAlert('Failed to create position!', 'error');\n});}}",
+  "parentColumnSpace": 28.8173828125,
+  "parentId": "yf6x338h2v",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "colour": {
-      "alias": "colour",
+    "active": {
+      "alias": "active",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('#' + currentRow[\"colour\"])) : '#' + currentRow[\"colour\"] })()}}",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('')) : '' })()}}",
+      "columnType": "checkbox",
+      "computedValue": "{{(() => { const tableData = Positions_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"active\"])) : active })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "colour",
-      "index": 2,
-      "isCellEditable": false,
+      "horizontalAlignment": "CENTER",
+      "id": "active",
+      "index": 3,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "",
+      "label": "Active",
       "notation": "standard",
-      "originalId": "colour",
+      "onCheckChange": "{{Update_Position.run().then(() => {\n  Positions.run();\n}).catch(() => {\n  showAlert('Failed to update!', 'error');\n});}}",
+      "originalId": "active",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -154,39 +160,33 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "customColumn1": {
-      "alias": "Delete",
+    "colour": {
+      "alias": "colour",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "borderRadius": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
-      "boxShadow": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
-      "buttonColor": "#b91c1c",
-      "buttonStyle": "rgb(3, 179, 101)",
-      "columnType": "iconButton",
-      "computedValue": "",
+      "cellBackground": "{{(() => { const tableData = Positions_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('#' + currentRow[\"colour\"])) : '#' + currentRow[\"colour\"] })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Positions_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"colour\"])) : colour })()}}",
       "currencyCode": "USD",
-      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "iconName": "trash",
-      "id": "customColumn1",
-      "index": 3,
-      "isCellEditable": false,
+      "horizontalAlignment": "CENTER",
+      "id": "colour",
+      "index": 2,
+      "isCellEditable": true,
       "isCellVisible": true,
-      "isDerived": true,
+      "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Delete",
-      "labelColor": "#FFFFFF",
+      "label": "# Colour",
       "notation": "standard",
-      "onClick": "{{utils.deletePosition();}}",
-      "originalId": "customColumn1",
-      "sticky": "left",
+      "onSubmit": "{{Update_Position.run().catch(() => {\n  showAlert('Failed to update!', 'error');\n});}}",
+      "originalId": "colour",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -198,7 +198,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "computedValue": "{{(() => { const tableData = Positions_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -228,26 +228,26 @@
       "alias": "position_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"position_name\"])) : currentRow[\"position_name\"] })()}}",
+      "computedValue": "{{(() => { const tableData = Positions_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"position_name\"])) : position_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
+      "horizontalAlignment": "CENTER",
       "id": "position_name",
       "index": 1,
-      "isCellEditable": false,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Assigned Positions",
+      "label": "Position",
       "notation": "standard",
+      "onSubmit": "{{Update_Position.run().catch(() => {\n  showAlert('Faield to update!', 'error');\n});}}",
       "originalId": "position_name",
       "sticky": "",
       "textSize": "0.875rem",
@@ -259,15 +259,17 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 22,
+  "rightColumn": 43,
   "searchKey": "",
-  "tableData": "",
+  "serverSidePaginationEnabled": true,
+  "showInlineEditingOptionDropdown": true,
+  "tableData": "{{Positions.data}}",
   "textSize": "0.875rem",
-  "topRow": 13,
+  "topRow": 1,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "fcoi6fmxkx",
-  "widgetName": "Table2"
+  "widgetId": "5n5eck4mzm",
+  "widgetName": "Positions_Table"
 }

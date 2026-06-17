@@ -1,10 +1,11 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowAddNewRow": true,
   "animateLoading": true,
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 61,
+  "bottomRow": 57,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -32,15 +33,17 @@
     }
   },
   "columnOrder": [
-    "customColumn1",
-    "position_name",
-    "colour",
+    "active",
+    "description",
+    "make",
+    "model",
     "id"
   ],
-  "columnUpdatedAt": 1781697267608,
+  "columnUpdatedAt": 1781693250512,
   "columnWidthMap": {
-    "customColumn1": 60,
-    "position_name": 234
+    "active": 125,
+    "description": 216,
+    "make": 232
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -61,92 +64,97 @@
       "key": "boxShadow"
     },
     {
+      "key": "tableData"
+    },
+    {
       "key": "primaryColumns.id.computedValue"
     },
     {
-      "key": "primaryColumns.position_name.computedValue"
+      "key": "primaryColumns.make.computedValue"
     },
     {
-      "key": "primaryColumns.colour.computedValue"
+      "key": "primaryColumns.model.computedValue"
     },
     {
-      "key": "primaryColumns.customColumn1.borderRadius"
+      "key": "primaryColumns.description.computedValue"
     },
     {
-      "key": "primaryColumns.customColumn1.boxShadow"
-    },
-    {
-      "key": "primaryColumns.colour.cellBackground"
+      "key": "primaryColumns.active.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.position_name.cellBackground"
-    },
-    {
-      "key": "primaryColumns.colour.cellBackground"
     }
   ],
   "dynamicTriggerPathList": [
     {
-      "key": "primaryColumns.customColumn1.onClick"
+      "key": "primaryColumns.active.onCheckChange"
+    },
+    {
+      "key": "primaryColumns.description.onSubmit"
+    },
+    {
+      "key": "primaryColumns.make.onSubmit"
+    },
+    {
+      "key": "primaryColumns.model.onSubmit"
+    },
+    {
+      "key": "onAddNewRowSave"
     }
   ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "LEFT",
-  "inlineEditingSaveOption": "ROW_LEVEL",
+  "inlineEditingSaveOption": "CUSTOM",
   "isLoading": false,
   "isSortable": true,
   "isVisible": true,
-  "isVisibleDownload": false,
+  "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": false,
-  "isVisibleSearch": false,
-  "key": "qva789vkkw",
+  "isVisibleSearch": true,
+  "key": "2xr0a3ucif",
   "label": "Data",
-  "leftColumn": 1,
+  "leftColumn": 7,
   "minWidth": 450,
-  "mobileBottomRow": 56,
-  "mobileLeftColumn": 30,
-  "mobileRightColumn": 64,
-  "mobileTopRow": 28,
+  "mobileBottomRow": 40,
+  "mobileLeftColumn": 8,
+  "mobileRightColumn": 42,
+  "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "originalBottomRow": 61,
-  "originalTopRow": 13,
-  "parentColumnSpace": 30.5625,
-  "parentId": "t7xpr85thw",
+  "onAddNewRowSave": "{{Create_Equipment.run().then(() => {\n  Equipment.run();\n}).catch(() => {\n  showAlert('Failed to create item!', 'error');\n});}}",
+  "parentColumnSpace": 28.8173828125,
+  "parentId": "fdxa6ahtzd",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "colour": {
-      "alias": "colour",
+    "active": {
+      "alias": "active",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('#' + currentRow[\"colour\"])) : '#' + currentRow[\"colour\"] })()}}",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('')) : '' })()}}",
+      "columnType": "checkbox",
+      "computedValue": "{{(() => { const tableData = Equipment_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"active\"])) : active })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "colour",
-      "index": 2,
-      "isCellEditable": false,
+      "horizontalAlignment": "CENTER",
+      "id": "active",
+      "index": 4,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "",
+      "label": "Active",
       "notation": "standard",
-      "originalId": "colour",
+      "onCheckChange": "{{Update_Equipment.run().then(() => {\n  Equipment.run();\n}).catch(() => {\n  showAlert('Failed to update!', 'error');\n});}}",
+      "originalId": "active",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -154,39 +162,32 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "customColumn1": {
-      "alias": "Delete",
+    "description": {
+      "alias": "description",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "borderRadius": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
-      "boxShadow": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
-      "buttonColor": "#b91c1c",
-      "buttonStyle": "rgb(3, 179, 101)",
-      "columnType": "iconButton",
-      "computedValue": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Equipment_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"description\"])) : description })()}}",
       "currencyCode": "USD",
-      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "iconName": "trash",
-      "id": "customColumn1",
+      "id": "description",
       "index": 3,
-      "isCellEditable": false,
+      "isCellEditable": true,
       "isCellVisible": true,
-      "isDerived": true,
+      "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Delete",
-      "labelColor": "#FFFFFF",
+      "label": "Type",
       "notation": "standard",
-      "onClick": "{{utils.deletePosition();}}",
-      "originalId": "customColumn1",
-      "sticky": "left",
+      "onSubmit": "{{Update_Equipment.run().catch(() => {\n  showAlert('Failed to update!', 'error');\n});}}",
+      "originalId": "description",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -198,7 +199,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "computedValue": "{{(() => { const tableData = Equipment_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -224,31 +225,63 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "position_name": {
-      "alias": "position_name",
+    "make": {
+      "alias": "make",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"position_name\"])) : currentRow[\"position_name\"] })()}}",
+      "computedValue": "{{(() => { const tableData = Equipment_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"make\"])) : make })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "position_name",
+      "id": "make",
       "index": 1,
-      "isCellEditable": false,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Assigned Positions",
+      "label": "Make",
       "notation": "standard",
-      "originalId": "position_name",
+      "onSubmit": "{{Update_Equipment.run().catch(() => {\n  showAlert('Failed to update!', 'error');\n});}}",
+      "originalId": "make",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "model": {
+      "alias": "model",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Equipment_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"model\"])) : model })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "model",
+      "index": 2,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Model",
+      "notation": "standard",
+      "onSubmit": "{{Update_Equipment.run().catch(() => {\n  showAlert('Failed to update!', 'error');\n});}}",
+      "originalId": "model",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -259,15 +292,17 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 22,
+  "rightColumn": 42,
   "searchKey": "",
-  "tableData": "",
+  "serverSidePaginationEnabled": true,
+  "showInlineEditingOptionDropdown": true,
+  "tableData": "{{Equipment.data}}",
   "textSize": "0.875rem",
-  "topRow": 13,
+  "topRow": 2,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "fcoi6fmxkx",
-  "widgetName": "Table2"
+  "widgetId": "hrfjgrr6g6",
+  "widgetName": "Equipment_Table"
 }

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 13,
   "boxShadow": "none",
   "buttonColor": "#00253a",
   "buttonVariant": "PRIMARY",
@@ -9,6 +9,9 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicTriggerPathList": [
@@ -17,22 +20,20 @@
     }
   ],
   "iconAlign": "left",
-  "iconName": "person",
+  "iconName": "arrow-left",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "k4m9e12n3p",
-  "leftColumn": 52,
+  "leftColumn": 1,
   "minWidth": 120,
-  "mobileBottomRow": 20,
-  "mobileLeftColumn": 47,
-  "mobileRightColumn": 63,
-  "mobileTopRow": 16,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('People', {}, 'SAME_WINDOW');}}",
-  "originalBottomRow": 20,
-  "originalTopRow": 16,
+  "onClick": "{{utils.backNavHandler();}}",
   "parentColumnSpace": 30.5625,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -41,11 +42,11 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 61,
-  "text": "PEOPLE",
-  "topRow": 16,
+  "rightColumn": 14,
+  "text": "{{utils.backBtnText.data}}",
+  "topRow": 9,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "h6yl4qrxwm",
+  "widgetId": "bv14tvm6o4",
   "widgetName": "Button1"
 }
