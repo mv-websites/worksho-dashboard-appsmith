@@ -28,6 +28,8 @@
   "mobileTopRow": 16,
   "needsErrorInfo": false,
   "onClick": "{{navigateTo('Prod Schedule - SETTINGS', {\n \"back\": \"Production Schedule\",\n}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 20,
+  "originalTopRow": 16,
   "parentColumnSpace": 30.5625,
   "parentId": "0",
   "parentRowSpace": 10,

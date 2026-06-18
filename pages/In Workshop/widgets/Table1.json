@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 164,
+  "bottomRow": 168,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -40,15 +40,15 @@
     "Make_Model",
     "Co_Name",
     "Order_No",
+    "Related_Job",
     "com_sales_val",
     "Problem",
     "Actual_Labour_Cost",
     "Actual_Parts_Cost",
-    "Related_Job",
     "Scheduled_Date_Time_End",
     "wksp_proposed_date"
   ],
-  "columnUpdatedAt": 1777448408380,
+  "columnUpdatedAt": 1781767821707,
   "columnWidthMap": {
     "Actual_Labour_Cost": 180,
     "Calculated_Parts_Charge": 182,
@@ -60,9 +60,10 @@
     "Description": 201,
     "Make_Model": 238,
     "Problem": 256,
+    "Related_Job": 128,
     "Scheduled_Date_Time_End": 110.875,
     "com_sales_val": 162,
-    "wksp_proposed_date": 186
+    "wksp_proposed_date": 167.875
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -135,11 +136,23 @@
     },
     {
       "key": "primaryColumns.Call_Next_ETA.borderRadius"
+    },
+    {
+      "key": "primaryColumns.Related_Job.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Order_No.cellBackground"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.Related_Job.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Order_No.cellBackground"
     }
   ],
   "dynamicTriggerPathList": [
@@ -475,6 +488,7 @@
       "alias": "Order_No",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (\n  (() => {\n    const match = String(currentRow.Order_No || \"\").match(/\\d{5,}/);\n    if (!match) return \"\";\n\n    const key = match[0].substring(0, 5);\n\n    return Table1.tableData.filter(row => {\n      const m = String(row.Order_No || \"\").match(/\\d{5,}/);\n      return m && m[0].substring(0, 5) === key;\n    }).length > 1\n      ? \"#22c55e\"\n      : \"\";\n  })()\n)) : \n  (() => {\n    const match = String(currentRow.Order_No || \"\").match(/\\d{5,}/);\n    if (!match) return \"\";\n\n    const key = match[0].substring(0, 5);\n\n    return Table1.tableData.filter(row => {\n      const m = String(row.Order_No || \"\").match(/\\d{5,}/);\n      return m && m[0].substring(0, 5) === key;\n    }).length > 1\n      ? \"#22c55e\"\n      : \"\";\n  })()\n })()}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Order_No\"])) : Order_No })()}}",
       "currencyCode": "USD",
@@ -491,8 +505,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "Order_No",
+      "isVisible": true,
+      "label": "Order No.",
       "notation": "standard",
       "originalId": "Order_No",
       "sticky": "",
@@ -537,6 +551,7 @@
       "alias": "Related_Job",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (\n  currentRow.Related_Job &&\n  String(currentRow.Related_Job).trim() !== \"\" &&\n  Table1.tableData.filter(\n    row =>\n      row.Related_Job &&\n      String(row.Related_Job).trim() !== \"\" &&\n      row.Related_Job === currentRow.Related_Job\n  ).length > 1\n    ? \"#22c55e\"\n    : \"\"\n)) : \n  currentRow.Related_Job &&\n  String(currentRow.Related_Job).trim() !== \"\" &&\n  Table1.tableData.filter(\n    row =>\n      row.Related_Job &&\n      String(row.Related_Job).trim() !== \"\" &&\n      row.Related_Job === currentRow.Related_Job\n  ).length > 1\n    ? \"#22c55e\"\n    : \"\"\n })()}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Related_Job\"])) : Related_Job })()}}",
       "currencyCode": "USD",
@@ -553,8 +568,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "Related_Job",
+      "isVisible": true,
+      "label": "Related Job",
       "notation": "standard",
       "originalId": "Related_Job",
       "sticky": "",
@@ -674,7 +689,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{Get_Workshop_List.data}}",
   "textSize": "0.875rem",
-  "topRow": 76,
+  "topRow": 80,
   "totalRecordsCount": "",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
