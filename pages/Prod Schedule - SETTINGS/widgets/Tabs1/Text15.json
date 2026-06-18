@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 18,
+  "bottomRow": 16,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "originalBottomRow": 16,
-  "originalTopRow": 11,
+  "originalBottomRow": 18,
+  "originalTopRow": 12,
   "overflow": "NONE",
   "parentColumnSpace": 28.8173828125,
   "parentId": "yf6x338h2v",
@@ -43,7 +43,7 @@
   "text": "You can use this tool to assist with chosing a color for the position.",
   "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 12,
+  "topRow": 11,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
