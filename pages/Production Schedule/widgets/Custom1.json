@@ -5,7 +5,7 @@
   "borderWidth": "0",
   "bottomRow": 66,
   "boxShadow": "none",
-  "defaultModel": "{{{\n\t\"data\": testData.dataFunc.data\n}}}",
+  "defaultModel": "{{{\n\t\"data\": data.chartData.data\n}}}",
   "dynamicBindingPathList": [
     {
       "key": "theme"

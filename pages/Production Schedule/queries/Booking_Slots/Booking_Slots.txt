@@ -1,0 +1,34 @@
+SELECT
+    c.Call_Id,
+    c.eq_description,
+    COALESCE(
+        JSON_ARRAYAGG(
+            JSON_OBJECT(
+            	'year', t.year,
+                'slot', t.slot,
+                'label',
+                    CONCAT(
+                        LEFT(SUBSTRING_INDEX(p.name, ' ', 1), 1),
+                        LEFT(SUBSTRING_INDEX(p.name, ' ', -1), 1)
+                    ),
+                'name', p.name,
+                'color', CONCAT('#',pos.colour)
+            )
+            ORDER BY t.slot
+        ),
+        JSON_ARRAY()
+    ) AS bookings
+FROM MV11_Open_Calls_Current_Handler c
+LEFT JOIN MV11_Workshop_time_entries t
+    ON t.call = c.Call_Id
+		AND t.year = {{this.params.year}}
+LEFT JOIN MV11_Workshop_Positions pos
+    ON pos.id = t.position_id
+LEFT JOIN MV11_Workshop_People p
+    ON p.id = t.person_id 
+WHERE c.Call_Id IN (1428288,1476623,1505332,1536599,2279053,3045366)
+GROUP BY
+    c.Call_Id,
+    c.eq_description
+ORDER BY
+    c.Call_Id;
