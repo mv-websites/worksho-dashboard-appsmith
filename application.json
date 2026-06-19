@@ -49,6 +49,10 @@
     {
       "id": "Prod Schedule - SETTINGS",
       "isDefault": false
+    },
+    {
+      "id": "WIP Overview",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

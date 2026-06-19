@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 168,
+  "bottomRow": 184,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -33,6 +33,7 @@
   },
   "columnOrder": [
     "Call_Next_ETA",
+    "customColumn1",
     "Call_Ref",
     "Date_Received",
     "Call_Status_Description",
@@ -48,11 +49,11 @@
     "Scheduled_Date_Time_End",
     "wksp_proposed_date"
   ],
-  "columnUpdatedAt": 1781767821707,
+  "columnUpdatedAt": 1781877645918,
   "columnWidthMap": {
     "Actual_Labour_Cost": 180,
     "Calculated_Parts_Charge": 182,
-    "Call_Next_ETA": 116,
+    "Call_Next_ETA": 60,
     "Call_Ref": 98,
     "Call_Status_Description": 154,
     "Co_Name": 248,
@@ -63,6 +64,7 @@
     "Related_Job": 128,
     "Scheduled_Date_Time_End": 110.875,
     "com_sales_val": 162,
+    "customColumn1": 60,
     "wksp_proposed_date": 167.875
   },
   "customIsLoading": false,
@@ -132,16 +134,16 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.Call_Next_ETA.boxShadow"
-    },
-    {
-      "key": "primaryColumns.Call_Next_ETA.borderRadius"
-    },
-    {
       "key": "primaryColumns.Related_Job.cellBackground"
     },
     {
       "key": "primaryColumns.Order_No.cellBackground"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
     }
   ],
   "dynamicPropertyPathList": [
@@ -164,6 +166,9 @@
     },
     {
       "key": "primaryColumns.Call_Next_ETA.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn1.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -260,11 +265,9 @@
       "alias": "Call_Next_ETA",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "borderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
-      "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
       "buttonColor": "#00253a",
       "buttonLabel": "View More",
-      "columnType": "button",
+      "columnType": "iconButton",
       "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Call_Next_ETA\"])) : Call_Next_ETA })()}}",
       "currencyCode": "USD",
       "customAlias": "",
@@ -272,6 +275,7 @@
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
+      "iconName": "eye-open",
       "id": "Call_Next_ETA",
       "index": 15,
       "isCellEditable": false,
@@ -643,6 +647,45 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "customColumn1": {
+      "alias": "Schedule",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#00253a",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "calendar",
+      "id": "customColumn1",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Schedule",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{showModal(Add_to_Schedule_Modal.name);}}",
+      "originalId": "customColumn1",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "wksp_proposed_date": {
       "alias": "wksp_proposed_date",
       "allowCellWrapping": false,
@@ -689,7 +732,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{Get_Workshop_List.data}}",
   "textSize": "0.875rem",
-  "topRow": 80,
+  "topRow": 96,
   "totalRecordsCount": "",
   "type": "TABLE_WIDGET_V2",
   "version": 2,

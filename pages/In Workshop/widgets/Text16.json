@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#22c55e",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 80,
+  "bottomRow": 96,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -49,7 +49,7 @@
   "text": "",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 76,
+  "topRow": 92,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

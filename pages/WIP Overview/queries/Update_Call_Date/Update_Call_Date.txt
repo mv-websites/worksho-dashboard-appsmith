@@ -1,0 +1,6 @@
+INSERT INTO mv_commercial.MV11_Open_Calls_Current_Handler
+    (Call_Id, workshop_eta)
+VALUES
+    ({{Table1.triggeredRow.Call_Ref}}, {{Table1.triggeredRow.wksp_proposed_date? Table1.triggeredRow.wksp_proposed_date : null}})
+ON DUPLICATE KEY UPDATE
+    workshop_eta   = VALUES(workshop_eta);

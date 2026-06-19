@@ -1,0 +1,6 @@
+SELECT DISTINCT(equipment.Description) as label, equipment.Description as value
+FROM SICLOPS_LIVE_MVL.dbo.vw_LAYD_Calls calls
+LEFT JOIN SICLOPS_LIVE_MVL.dbo.vw_LAYD_Equipment equipment
+	ON calls.Link_to_Equipment = equipment.Equipment_Code 
+WHERE Last_Event_Status IN ('XR', 'M1', 'PK', 'HV', 'PB', 'PD', 'RB', 'RH', 'VF', 'WC', 'WS')
+ORDER BY label ASC;

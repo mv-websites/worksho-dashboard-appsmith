@@ -1,0 +1,6 @@
+SELECT *
+FROM mv_commercial.MV11_Open_Calls_Current_Handler 
+WHERE FIND_IN_SET(
+  Call_Id,
+  {{ Get_Workshop_List.data.map(c => c.Call_Ref).join(",") }}
+)
