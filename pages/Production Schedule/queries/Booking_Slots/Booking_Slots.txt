@@ -26,7 +26,7 @@ LEFT JOIN MV11_Workshop_Positions pos
     ON pos.id = t.position_id
 LEFT JOIN MV11_Workshop_People p
     ON p.id = t.person_id 
-WHERE c.Call_Id IN (1428288,1476623,1505332,1536599,2279053,3045366)
+WHERE c.Call_Id IN (3563266,3563264,3565416,1536599,2279053,3045366)
 GROUP BY
     c.Call_Id,
     c.eq_description
