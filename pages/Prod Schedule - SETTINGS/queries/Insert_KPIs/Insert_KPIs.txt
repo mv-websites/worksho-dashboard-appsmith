@@ -1,0 +1,2 @@
+INSERT INTO mv_commercial.MV11_Workshop_Work_Targets (equipment_id, position_id, hours)
+VALUES ({{Equipment_Table.triggeredRow.id}}, {{KPI_Table.newRow.position_id}}, {{KPI_Table.newRow.hours}});

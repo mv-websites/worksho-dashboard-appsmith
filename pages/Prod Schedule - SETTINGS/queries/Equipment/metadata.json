@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT id, make, model, description, active\nFROM mv_commercial.MV11_Workshop_equipment\nWHERE active = {{!Equipment_Disabled_Switch.isSwitchedOn}}\nORDER BY description ASC;",
+      "body": "SELECT\n    e.id,\n    e.make,\n    e.model,\n    e.description,\n    e.active,\n    COUNT(t.equipment_id) AS row_count,\n    SUM(COALESCE(t.hours, 0)) AS total_hours\nFROM mv_commercial.MV11_Workshop_equipment e\nLEFT JOIN mv_commercial.MV11_Workshop_Work_Targets t\n    ON t.equipment_id = e.id\nWHERE e.active = {{!Equipment_Disabled_Switch.isSwitchedOn}}\nGROUP BY\n    e.id,\n    e.make,\n    e.model,\n    e.description,\n    e.active\nORDER BY e.description ASC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

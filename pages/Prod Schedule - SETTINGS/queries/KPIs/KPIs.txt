@@ -1,0 +1,6 @@
+SELECT t.position_id, t.hours, p.position_name, p.colour
+FROM mv_commercial.MV11_Workshop_Work_Targets t
+LEFT JOIN mv_commercial.MV11_Workshop_Positions p
+	ON t.position_id  = p.id 
+WHERE t.equipment_id = {{Equipment_Table.triggeredRow.id}}
+AND p.active = 1;

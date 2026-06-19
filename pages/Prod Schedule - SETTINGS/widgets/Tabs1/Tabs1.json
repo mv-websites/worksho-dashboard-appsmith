@@ -93,7 +93,7 @@
       "rightColumn": 733.5,
       "shouldScrollContents": false,
       "tabId": "tab2",
-      "tabName": "Equipment Qualifications",
+      "tabName": "Equipment & KPIs",
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
@@ -152,7 +152,7 @@
       "id": "tab2",
       "index": 1,
       "isVisible": true,
-      "label": "Equipment Qualifications",
+      "label": "Equipment & KPIs",
       "positioning": "vertical",
       "widgetId": "fdxa6ahtzd"
     }

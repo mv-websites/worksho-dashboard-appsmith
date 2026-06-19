@@ -1,0 +1,332 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowAddNewRow": true,
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 64,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "customColumn1",
+    "colour",
+    "position_id",
+    "position_name",
+    "hours"
+  ],
+  "columnUpdatedAt": 1781788517469,
+  "columnWidthMap": {
+    "colour": 60,
+    "customColumn1": 60,
+    "position_id": 317,
+    "position_name": 247
+  },
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.position_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.hours.computedValue"
+    },
+    {
+      "key": "primaryColumns.position_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.colour.computedValue"
+    },
+    {
+      "key": "primaryColumns.colour.cellBackground"
+    },
+    {
+      "key": "primaryColumns.position_name.selectOptions"
+    },
+    {
+      "key": "primaryColumns.position_id.selectOptions"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.colour.cellBackground"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onAddNewRowSave"
+    },
+    {
+      "key": "primaryColumns.hours.onSubmit"
+    },
+    {
+      "key": "primaryColumns.position_id.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "CUSTOM",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": false,
+  "isVisibleSearch": true,
+  "key": "22q9zqjf0u",
+  "label": "Data",
+  "leftColumn": 1,
+  "minWidth": 450,
+  "mobileBottomRow": 48,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 20,
+  "needsErrorInfo": false,
+  "onAddNewRowSave": "{{Insert_KPIs.run().then(() => {\n  KPIs.run().then(() => {\n    showAlert('Successfully added KPI!', 'success');\n  });\n}).catch(() => {\n  showAlert('Failed to add KPI!', 'error');\n});}}",
+  "originalBottomRow": 64,
+  "originalTopRow": 10,
+  "parentColumnSpace": 21.8125,
+  "parentId": "xbcgclc8pf",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "colour": {
+      "alias": "colour",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = KPI_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('#' + currentRow[\"colour\"])) : '#' + currentRow[\"colour\"] })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = KPI_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('')) : '' })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "colour",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "",
+      "notation": "standard",
+      "originalId": "colour",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customColumn1": {
+      "alias": "Delete",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{KPI_Table.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{KPI_Table.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#b91c1c",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "trash",
+      "id": "customColumn1",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Delete",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{Delete_KPI.run().then(() => {\n  KPIs.run();\n}).catch(() => {\n  showAlert('Failed to delete!', 'error');\n});}}",
+      "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "hours": {
+      "alias": "hours",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = KPI_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"hours\"])) : hours })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "hours",
+      "index": 1,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Hours",
+      "notation": "standard",
+      "onSubmit": "{{Update_KPI.run()}}",
+      "originalId": "hours",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "position_id": {
+      "alias": "position_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = KPI_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"position_id\"])) : position_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "position_id",
+      "index": 0,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "KPI/Position",
+      "notation": "standard",
+      "onOptionChange": "{{Update_KPI.run().catch(() => {\n  showAlert(Update_KPI.responseMeta.statusCode === 'SQLSTATE: 23000' ? 'Duplicate Entry!' : 'Failed to update! Error: ' + Update_KPI.data, 'error');\n  resetWidget(\"KPI_Table\", true);\n});}}",
+      "originalId": "position_id",
+      "selectOptions": "{{(() => { const tableData = KPI_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Positions.data.map(item => ({\n      label: item.position_name,\n      value: item.id\n    })))) : Positions.data.map(item => ({\n      label: item.position_name,\n      value: item.id\n    })) })()}}",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "position_name": {
+      "alias": "position_name",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = KPI_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"position_name\"])) : position_name })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "position_name",
+      "index": 2,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "position_name",
+      "notation": "standard",
+      "originalId": "position_name",
+      "selectOptions": "{{(() => { const tableData = KPI_Table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( Positions.data.map(item => ({\n  label: item.position_name,\n  value: item.id\n})) )) :  Positions.data.map(item => ({\n  label: item.position_name,\n  value: item.id\n}))  })()}}",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "searchKey": "",
+  "serverSidePaginationEnabled": true,
+  "showInlineEditingOptionDropdown": true,
+  "tableData": "{{KPIs.data}}",
+  "textSize": "0.875rem",
+  "topRow": 10,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "dexau523w4",
+  "widgetName": "KPI_Table"
+}

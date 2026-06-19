@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 9,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,42 +11,45 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "0.875rem",
-  "fontStyle": "",
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "5t9h2hhr72",
-  "leftColumn": 44,
+  "key": "0wn2u8xfjl",
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 13,
-  "mobileLeftColumn": 47,
-  "mobileRightColumn": 63,
-  "mobileTopRow": 9,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 15,
+  "mobileRightColumn": 31,
+  "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "originalBottomRow": 16,
-  "originalTopRow": 11,
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
   "overflow": "NONE",
-  "parentColumnSpace": 28.8173828125,
-  "parentId": "yf6x338h2v",
+  "parentColumnSpace": 21.8125,
+  "parentId": "xbcgclc8pf",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 53,
+  "rightColumn": 59,
   "shouldTruncate": false,
-  "text": "You can use this tool to assist with chosing a color for the position.",
-  "textAlign": "CENTER",
+  "text": "<u>{{Equipment_Table.triggeredRow.description + ' - ' + Equipment_Table.triggeredRow.make + ' ' + Equipment_Table.triggeredRow.model}}</u>",
+  "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 11,
+  "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "5gn42cthof",
-  "widgetName": "Text15"
+  "widgetId": "p4x8t1obfv",
+  "widgetName": "Text17"
 }

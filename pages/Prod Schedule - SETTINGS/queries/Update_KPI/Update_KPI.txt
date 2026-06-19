@@ -1,0 +1,6 @@
+UPDATE mv_commercial.MV11_Workshop_Work_Targets
+SET
+    position_id = {{ KPI_Table.updatedRow.position_id }},
+    hours = {{ KPI_Table.updatedRow.hours }}
+WHERE equipment_id = {{ Equipment_Table.triggeredRow.id }}
+  AND position_id = {{ KPI_Table.tableData[KPI_Table.updatedRowIndices[0]].position_id }};
