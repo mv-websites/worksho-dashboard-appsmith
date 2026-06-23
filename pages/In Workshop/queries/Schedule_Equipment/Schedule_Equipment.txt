@@ -1,0 +1,2 @@
+SELECT id, make, model, description, active, created, updated
+FROM mv_commercial.MV11_Workshop_equipment;

@@ -1,0 +1,65 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 29,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "dmzcmrrm0n",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Select Equipment Type:",
+  "labelTextSize": "0.875rem",
+  "labelTooltip": "This matches the equipment item from Siclops to the relevant KPIs and qualifications stored in this application. ",
+  "labelWidth": 5,
+  "leftColumn": 6,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 28,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 36,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 28,
+  "originalTopRow": 21,
+  "parentColumnSpace": 14,
+  "parentId": "zj8034b10w",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 37,
+  "serverSideFiltering": false,
+  "sourceData": "{{Schedule_Equipment.data.map((item) => ({\n\t\"value\": item.id,\n\t\"label\": `${item.description}: ${item.make} ${item.model}`\n}))}}",
+  "topRow": 22,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "2tcrxw7578",
+  "widgetName": "Equipment_Type_Select"
+}

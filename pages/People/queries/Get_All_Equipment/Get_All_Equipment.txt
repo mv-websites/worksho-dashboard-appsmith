@@ -9,6 +9,6 @@ SELECT
 FROM mv_commercial.MV11_Workshop_equipment e
 LEFT JOIN mv_commercial.MV11_Workshop_Personnel_Qualifications q
     ON q.equipment_id = e.id
-   AND q.person_id = 2
+   AND q.person_id = {{Table1.selectedRow.id}}
    AND e.active = 1
 ORDER BY e.description;

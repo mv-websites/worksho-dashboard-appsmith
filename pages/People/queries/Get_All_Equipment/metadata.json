@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n    e.id,\n    e.description,\n    CONCAT(e.make, ' - ', e.model) as make_model,\n    CASE\n        WHEN q.person_id IS NOT NULL THEN 1\n        ELSE 0\n    END AS assigned\nFROM mv_commercial.MV11_Workshop_equipment e\nLEFT JOIN mv_commercial.MV11_Workshop_Personnel_Qualifications q\n    ON q.equipment_id = e.id\n   AND q.person_id = 2\n   AND e.active = 1\nORDER BY e.description;",
+      "body": "SELECT\n    e.id,\n    e.description,\n    CONCAT(e.make, ' - ', e.model) as make_model,\n    CASE\n        WHEN q.person_id IS NOT NULL THEN 1\n        ELSE 0\n    END AS assigned\nFROM mv_commercial.MV11_Workshop_equipment e\nLEFT JOIN mv_commercial.MV11_Workshop_Personnel_Qualifications q\n    ON q.equipment_id = e.id\n   AND q.person_id = {{Table1.selectedRow.id}}\n   AND e.active = 1\nORDER BY e.description;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "mv_commercial",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "Get_All_Equipment",
     "pageId": "People",
     "runBehaviour": "AUTOMATIC",

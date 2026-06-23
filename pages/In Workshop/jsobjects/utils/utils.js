@@ -2,6 +2,12 @@ export default {
 	logVisitOnLoad() {
 		Log_Visit.run();
 	},
+	async matchEquipment () {
+		const equipmentList = await Schedule_Equipment.run();
+		const matchedItem = filters.findEquipment(equipmentList, Table1.triggeredRow)
+		Equipment_Type_Select.setSelectedOption(matchedItem.id)
+		showModal(Add_to_Schedule_Modal.name)
+	},
 	getStatus() {
 		return [
 			{
