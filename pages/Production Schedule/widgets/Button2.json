@@ -11,7 +11,11 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconAlign": "left",
   "iconName": "add",
   "isDefaultClickDisabled": true,
@@ -26,6 +30,7 @@
   "mobileRightColumn": 7,
   "mobileTopRow": 16,
   "needsErrorInfo": false,
+  "onClick": "{{navigateTo('In Workshop', {}, 'SAME_WINDOW');}}",
   "originalBottomRow": 20,
   "originalTopRow": 16,
   "parentColumnSpace": 30.5625,

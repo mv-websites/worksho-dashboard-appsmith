@@ -8,6 +8,17 @@ export default {
 		Equipment_Type_Select.setSelectedOption(matchedItem.id)
 		showModal(Add_to_Schedule_Modal.name)
 	},
+	async createScheduledItem() {
+		// closeModal(Add_to_Schedule_Modal.name)
+		try {
+			await Insert_Scheduled_Item.run()
+			showAlert("Successfully scheduled!", 'success')
+			await Get_Call_Data.run()
+			closeModal(Add_to_Schedule_Modal.name)
+		} catch (err) {
+			showAlert(`Failed to schedule item. Error: ${err.message}`, 'error')
+		}
+	},
 	getStatus() {
 		return [
 			{

@@ -24,6 +24,8 @@
   "mobileRightColumn": 61,
   "mobileTopRow": 25,
   "needsErrorInfo": false,
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
   "parentColumnSpace": 14,
   "parentId": "zj8034b10w",
   "parentRowSpace": 10,

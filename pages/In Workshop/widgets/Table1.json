@@ -49,7 +49,7 @@
     "Scheduled_Date_Time_End",
     "wksp_proposed_date"
   ],
-  "columnUpdatedAt": 1781877645918,
+  "columnUpdatedAt": 1782210104567,
   "columnWidthMap": {
     "Actual_Labour_Cost": 180,
     "Calculated_Parts_Charge": 182,
@@ -144,6 +144,12 @@
     },
     {
       "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.cellBackground"
+    },
+    {
+      "key": "primaryColumns.customColumn1.isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -155,6 +161,12 @@
     },
     {
       "key": "primaryColumns.Order_No.cellBackground"
+    },
+    {
+      "key": "primaryColumns.customColumn1.cellBackground"
+    },
+    {
+      "key": "primaryColumns.customColumn1.isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -655,6 +667,7 @@
       "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
       "buttonColor": "#00253a",
       "buttonStyle": "rgb(3, 179, 101)",
+      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (\n  (() => {\n    const call = Get_Call_Data.data.find(\n      row => row.Call_Id === currentRow.Call_Ref\n    );\n\n    return call?.wksp_complete\n      ? '#15803d'\n      : call?.wksp_scheduled\n        ? '#eab308'\n        : '';\n  })()\n)) : \n  (() => {\n    const call = Get_Call_Data.data.find(\n      row => row.Call_Id === currentRow.Call_Ref\n    );\n\n    return call?.wksp_complete\n      ? '#15803d'\n      : call?.wksp_scheduled\n        ? '#eab308'\n        : '';\n  })()\n })()}}",
       "columnType": "iconButton",
       "computedValue": "",
       "currencyCode": "USD",
@@ -669,7 +682,7 @@
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": true,
-      "isDisabled": false,
+      "isDisabled": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Get_Call_Data.data.find(row => row.Call_Id === currentRow.Call_Ref)?.wksp_scheduled? 'true' : 'false')) : Get_Call_Data.data.find(row => row.Call_Id === currentRow.Call_Ref)?.wksp_scheduled? 'true' : 'false' })()}}",
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,

@@ -26,7 +26,8 @@ LEFT JOIN MV11_Workshop_Positions pos
     ON pos.id = t.position_id
 LEFT JOIN MV11_Workshop_People p
     ON p.id = t.person_id 
-WHERE c.Call_Id IN (3563266,3563264,3565416,1536599,2279053,3045366)
+WHERE c.wksp_scheduled = 1
+AND c.wksp_complete = 0
 GROUP BY
     c.Call_Id,
     c.eq_description

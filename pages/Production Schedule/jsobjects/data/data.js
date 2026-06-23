@@ -13,5 +13,8 @@ export default {
 			"year": year,
 			"equipment": slots
 		}
+	},
+	async getItemScheduleTableData() {
+		
 	}
 }

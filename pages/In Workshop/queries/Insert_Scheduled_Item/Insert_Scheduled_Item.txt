@@ -1,0 +1,21 @@
+INSERT INTO mv_commercial.MV11_Open_Calls_Current_Handler
+(
+	Call_Id,
+	wksp_equipment_id,
+	eq_description,
+	eq_make_model,
+	wksp_scheduled
+)
+VALUES
+(
+	{{Table1.triggeredRow.Call_Ref}}, 
+	{{Equipment_Type_Select.selectedOptionValue}}, 
+	{{Table1.triggeredRow.Description}}, 
+	{{Table1.triggeredRow.Make_Model}},
+	1
+)
+ON DUPLICATE KEY UPDATE
+    wksp_equipment_id = VALUES(wksp_equipment_id),
+    eq_description     = VALUES(eq_description),
+		eq_make_model			 = VALUES(eq_make_model),
+    wksp_scheduled     = VALUES(wksp_scheduled);
