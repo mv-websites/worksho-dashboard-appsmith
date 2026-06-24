@@ -1,0 +1,15 @@
+SELECT
+    p.id,
+    p.name
+FROM MV11_Workshop_People p
+JOIN MV11_Workshop_Personnel_Positions pos
+    ON pos.person_id = p.id
+JOIN MV11_Workshop_Personnel_Qualifications q
+    ON q.person_id = p.id
+WHERE pos.position_id = {{Schedule_Targets_table.selectedRow.position_id}}
+AND q.equipment_id = (
+	SELECT wksp_equipment_id 
+	FROM mv_commercial.MV11_Open_Calls_Current_Handler 
+	WHERE Call_Id = {{modal.eqModalOpen.data}}
+)
+AND p.active = 1;

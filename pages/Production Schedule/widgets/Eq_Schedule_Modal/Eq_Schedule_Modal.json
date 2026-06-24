@@ -8,7 +8,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 590,
+      "bottomRow": 780,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 596,
+      "minHeight": 782,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -58,7 +58,7 @@
   ],
   "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [],
-  "height": 596,
+  "height": 782,
   "isCanvas": true,
   "isLoading": false,
   "key": "mo4qz1hp9d",
@@ -82,5 +82,5 @@
   "version": 2,
   "widgetId": "7r3r4b6eh0",
   "widgetName": "Eq_Schedule_Modal",
-  "width": 1022
+  "width": 1428
 }

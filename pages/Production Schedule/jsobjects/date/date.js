@@ -12,7 +12,7 @@ export default {
 	* SLOT TO DATE
 	* Converts a slot number to a date and whether it is AM or PM
 	*/
-	slotToDate(year = new Date().getFullYear(), slot = 17) {
+	slotToDate(year = new Date().getFullYear(), slot = 0) {
 		const firstMonday = this.getFirstFullWeekMonday(year);
 		const weekIndex = Math.floor(slot / 10);
 		const remainder = slot % 10;

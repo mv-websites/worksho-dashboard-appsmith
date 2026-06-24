@@ -1,0 +1,9 @@
+SELECT t.position_id, p.position_name, p.colour, t.hours, CEILING(t.hours / 4.0) AS blocks 
+FROM mv_commercial.MV11_Workshop_Work_Targets t
+LEFT JOIN mv_commercial.MV11_Workshop_Positions p
+	ON p.id = t.position_id 
+WHERE equipment_id = (
+	SELECT wksp_equipment_id 
+	FROM mv_commercial.MV11_Open_Calls_Current_Handler 
+	WHERE Call_Id = {{this.params.call_ref}}
+);

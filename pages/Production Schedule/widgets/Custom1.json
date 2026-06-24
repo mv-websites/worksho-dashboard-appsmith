@@ -3,7 +3,7 @@
   "borderColor": "#231f20",
   "borderRadius": "0.375rem",
   "borderWidth": "1",
-  "bottomRow": 79,
+  "bottomRow": 71,
   "boxShadow": "none",
   "defaultModel": "{{{\n\t\"data\": data.chartData.data\n}}}",
   "dynamicBindingPathList": [
@@ -24,7 +24,7 @@
   "events": [
     "handleRequestClick"
   ],
-  "handleRequestClick": "{{modal.eqModalOpen(item.toString());}}",
+  "handleRequestClick": "{{modal.eqModalOpen(item);}}",
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
@@ -38,7 +38,7 @@
   "mobileRightColumn": 48,
   "mobileTopRow": 54,
   "needsErrorInfo": false,
-  "originalBottomRow": 78,
+  "originalBottomRow": 71,
   "originalTopRow": 21,
   "parentColumnSpace": 30.5625,
   "parentId": "0",

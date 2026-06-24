@@ -8,7 +8,8 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "call_ref"
+          "name": "call_ref",
+          "value": "{{3563266}}"
         }
       ],
       "paginationType": "NONE",
@@ -30,7 +31,7 @@
     "fullyQualifiedName": "modal.eqModalOpen",
     "name": "eqModalOpen",
     "pageId": "Production Schedule",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
