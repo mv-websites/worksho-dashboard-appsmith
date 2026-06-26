@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 11,
+  "bottomRow": 9,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -21,7 +21,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "1jtieehpf9",
-  "leftColumn": 1,
+  "leftColumn": 28,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -38,15 +38,15 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 28,
+  "rightColumn": 55,
   "shouldTruncate": false,
-  "text": "<div style=\"margin-bottom:-9px\">1. Select Schedule Target</div>\n<p style=\"margin-top:-9px; font-size: 12px; font-weight: 400;\">Targets/KPIs assigned to this equipment.\nTime blocks are rounded up to the neares 4 hours. eg. 5hrs would result in 2 time blocks</p>",
+  "text": "<div>4. Check the Schedule</div>",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "jske57p9eq",
-  "widgetName": "Text14"
+  "widgetId": "8569o70r9t",
+  "widgetName": "Text14Copy"
 }

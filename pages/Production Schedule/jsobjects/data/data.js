@@ -14,25 +14,43 @@ export default {
 			"equipment": slots
 		}
 	},
+	getBankHolidays(year = 2026) {
+		const holidaysRaw = Public_Holidays.data
+		const holidaysEnglandWales = holidaysRaw['england-and-wales'].events
+
+		const holidays = holidaysEnglandWales.filter((day) => new Date(day.date).getFullYear() === year).map(date => date.date);
+
+		return holidays;
+	},
 	async fullRemainingYearSlots(year = 2026) {
 		// return Availability_Table.
 		const numberArray = Array.from({ length: 520 }, (_, i) => i);
 		const splitSlotsToday = date.dateToSlot(year, new Date());
 		const slots = numberArray.slice(splitSlotsToday)
-		
+		const bankHolidays = this.getBankHolidays()
+
 		const days = ["Mon", "Tues", "Wed", "Thu", "Fri"]
 		const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-		const dates =  slots.map((slot) => {
-			const slotDateObject = date.slotToDate(year, slot)
-			const slotDate = new Date(slotDateObject.date)
+		const dates = slots
+		.filter(slot => {
+			const slotDate = new Date(date.slotToDate(year, slot).date);
+
+			return !bankHolidays.some(h =>
+																new Date(h).toDateString() === slotDate.toDateString()
+															 );
+		})
+		.map(slot => {
+			const slotDateObject = date.slotToDate(year, slot);
+			const slotDate = new Date(slotDateObject.date);
+
 			return {
 				value: slot,
-				label: `${days[slotDate.getDay()-1]} ${slotDate.getDate()} ${months[slotDate.getMonth()]} - ${slotDateObject.halfDay}`
-			}
+				label: `${days[slotDate.getDay() - 1]} ${slotDate.getDate()} ${months[slotDate.getMonth()]} - ${slotDateObject.halfDay}`
+			};
 		});
-		
-		MultiSelect1.setSelectedOptions([])
+
+		Availability_Select.setSelectedOptions([])
 
 		return dates
 

@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 49,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
@@ -14,16 +14,29 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "labelText"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
-  "dynamicTriggerPathList": [],
-  "isDisabled": false,
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": "{{Schedule_Targets_table.selectedRow.position_id > 0? false : true}}",
   "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
@@ -31,11 +44,13 @@
   "key": "e2pkzerda5",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Select User",
-  "labelTextSize": "0.875rem",
-  "labelTooltip": "NOTE: Users are suggested based on: \n1. The equipment they are qualified to work on and;\n2. The work type they are qualified to carry out",
+  "labelStyle": "BOLD",
+  "labelText": "2. Select Person for: {{Schedule_Targets_table.selectedRow.position_name}}",
+  "labelTextColor": "#231f20",
+  "labelTextSize": "1rem",
+  "labelTooltip": "NOTE: People are suggested based on: \n1. The equipment they are qualified to work on and;\n2. The work type they are qualified to carry out",
   "labelWidth": 5,
-  "leftColumn": 28,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -44,20 +59,23 @@
   "mobileRightColumn": 48,
   "mobileTopRow": 20,
   "needsErrorInfo": false,
+  "onOptionChange": "{{resetWidget(\"Availability_Select\", true);}}",
   "optionLabel": "name",
   "optionValue": "id",
+  "originalBottomRow": 49,
+  "originalTopRow": 42,
   "parentColumnSpace": 22.125,
   "parentId": "75x9ub5fbt",
   "parentRowSpace": 10,
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 48,
+  "rightColumn": 27,
   "serverSideFiltering": false,
   "sourceData": "{{Qualified_User.data}}",
-  "topRow": 13,
+  "topRow": 42,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "jlm39x7pwd",
-  "widgetName": "Select1"
+  "widgetName": "User_Select"
 }

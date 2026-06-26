@@ -1,0 +1,8 @@
+SELECT e.position_id, pos.position_name, pos.colour , e.person_id, p.name, e.`year`, e.slot
+FROM mv_commercial.MV11_Workshop_time_entries e
+LEFT JOIN mv_commercial.MV11_Workshop_People p
+	ON e.person_id = p.id 
+LEFT JOIN mv_commercial.MV11_Workshop_Positions pos
+	ON pos.id = e.position_id 
+WHERE `call` = 3563266
+ORDER BY e.slot ASC;
