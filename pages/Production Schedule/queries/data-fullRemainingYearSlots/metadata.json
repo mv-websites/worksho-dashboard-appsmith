@@ -30,7 +30,7 @@
     "fullyQualifiedName": "data.fullRemainingYearSlots",
     "name": "fullRemainingYearSlots",
     "pageId": "Production Schedule",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

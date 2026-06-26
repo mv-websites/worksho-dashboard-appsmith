@@ -15,20 +15,25 @@ export default {
 		}
 	},
 	async fullRemainingYearSlots(year = 2026) {
+		// return Availability_Table.
 		const numberArray = Array.from({ length: 520 }, (_, i) => i);
-		const splitSlotsToday = date.dateToSlot(year, new Date())
+		const splitSlotsToday = date.dateToSlot(year, new Date());
 		const slots = numberArray.slice(splitSlotsToday)
+		
+		const days = ["Mon", "Tues", "Wed", "Thu", "Fri"]
+		const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 		const dates =  slots.map((slot) => {
-			const slotDate = date.slotToDate(year, slot)
+			const slotDateObject = date.slotToDate(year, slot)
+			const slotDate = new Date(slotDateObject.date)
 			return {
-				slot: slot,
-				date: slotDate.date,
-				halfDay: slotDate.halfDay
+				value: slot,
+				label: `${days[slotDate.getDay()-1]} ${slotDate.getDate()} ${months[slotDate.getMonth()]} - ${slotDateObject.halfDay}`
 			}
-		})
+		});
 		
-		Availability_Table.setData(dates)
+		MultiSelect1.setSelectedOptions([])
+
 		return dates
 
 	}

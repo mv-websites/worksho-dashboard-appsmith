@@ -15,4 +15,4 @@ SELECT
             FLOOR((slot % 10) / 2)
         ) DAY
     ) AS slot_date
-FROM mv_commercial.MV11_Workshop_time_tentries;
+FROM mv_commercial.MV11_Workshop_time_entries;

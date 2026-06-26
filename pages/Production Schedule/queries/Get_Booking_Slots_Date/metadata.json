@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n    year,\n    slot,\n    DATE_ADD(\n        -- first Monday of first full week\n        DATE_ADD(\n            MAKEDATE(year, 1),\n            INTERVAL (\n                (9 - DAYOFWEEK(MAKEDATE(year,1))) % 7\n            ) DAY\n        ),\n        INTERVAL (\n            (FLOOR(slot / 10) * 7)\n            +\n            FLOOR((slot % 10) / 2)\n        ) DAY\n    ) AS slot_date\nFROM mv_commercial.MV11_Workshop_time_tentries;",
+      "body": "SELECT\n    year,\n    slot,\n    DATE_ADD(\n        -- first Monday of first full week\n        DATE_ADD(\n            MAKEDATE(year, 1),\n            INTERVAL (\n                (9 - DAYOFWEEK(MAKEDATE(year,1))) % 7\n            ) DAY\n        ),\n        INTERVAL (\n            (FLOOR(slot / 10) * 7)\n            +\n            FLOOR((slot % 10) / 2)\n        ) DAY\n    ) AS slot_date\nFROM mv_commercial.MV11_Workshop_time_entries;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

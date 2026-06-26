@@ -10,9 +10,16 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -20,7 +27,7 @@
   ],
   "iconAlign": "left",
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{Equipment_Type_Select.selectedOptionValue? false : true}}",
   "isLoading": false,
   "isVisible": true,
   "key": "v5rlrtqjbz",
